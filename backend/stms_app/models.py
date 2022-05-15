@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 class Soldier(models.Model):
     """Detailed Information about each soldier."""
 
-    # Foreign Key linking User to their profile information
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30)
     middle_name = models.CharField(max_length=30)
@@ -38,9 +37,9 @@ class Soldier(models.Model):
         ("O3", "O3"),
     ]
     grade = models.CharField(max_length=3, choices=grade_choices)
-    pebd = models.DateField(auto_now=False, auto_now_add=False)
-    date_of_rank = models.DateField(auto_now=False, auto_now_add=False)
-    expiration_term_of_service = models.DateField(auto_now=False, auto_now_add=False)
+    pebd = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    date_of_rank = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    expiration_term_of_service = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     section_choices = [
         ("BN STAFF", "BN STAFF"),
         ("ALPHA", "ALPHA"),
@@ -74,10 +73,10 @@ class Soldier(models.Model):
     ]
     role = models.CharField(max_length=10, choices=role_choices, default="UNASSIGNED")
     acft_score = models.PositiveIntegerField(
-        validators=[MinValueValidator(0), MaxValueValidator(600)]
+        validators=[MinValueValidator(0), MaxValueValidator(600)], null=True, blank=True
     )
     m4_qual = models.PositiveIntegerField(
-        validators=[MinValueValidator(0), MaxValueValidator(40)]
+        validators=[MinValueValidator(0), MaxValueValidator(40)], null=True, blank=True
     )
     dlc_1_complete = models.BooleanField(default=False, blank=True)
     blc_complete = models.BooleanField(default=False, blank=True)
@@ -111,4 +110,4 @@ class Comment(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.owner} {self.category}"
+        return f"{self.soldier} {self.category}"
