@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Soldier(models.Model):
     """Detailed Information about each soldier."""
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="soldier")
     first_name = models.CharField(max_length=30)
     middle_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -94,8 +94,8 @@ class Soldier(models.Model):
 class Comment(models.Model):
     """Comments about each team members performance."""
 
-    soldier = models.ForeignKey(Soldier, on_delete=models.CASCADE)
-    commentor = models.ForeignKey(Soldier, on_delete=models.CASCADE)
+    soldier = models.ForeignKey(Soldier, on_delete=models.CASCADE, related_name="soldier_comments")
+    commentor = models.ForeignKey(Soldier, on_delete=models.CASCADE, related_name="commentor_coments")
     category_choices = [
         ("CHARACTER", "CHARACTER"),
         ("PRESENCE", "PRESENCE"),
