@@ -92,10 +92,11 @@ class Soldier(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     """Comments about each team members performance."""
 
     soldier = models.ForeignKey(Soldier, on_delete=models.CASCADE)
+    commentor = models.ForeignKey(Soldier, on_delete=models.CASCADE)
     category_choices = [
         ("CHARACTER", "CHARACTER"),
         ("PRESENCE", "PRESENCE"),
@@ -106,7 +107,7 @@ class Comments(models.Model):
         ("OVERALL", "OVERALL"),
     ]
     category = models.CharField(max_length=10, choices=category_choices)
-    text = models.TextField()
+    comment_text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
