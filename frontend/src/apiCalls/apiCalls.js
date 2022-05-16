@@ -8,4 +8,8 @@ apiCalls.login = (data) => {
   return axios.post(`${BASE_URL}api/token/`, data);
 };
 
+apiCalls.registerUser = (data) => {
+  return axios.post(`${BASE_URL}users/`, data);
+};
+
 export default apiCalls;
