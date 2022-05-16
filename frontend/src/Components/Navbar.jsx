@@ -12,6 +12,7 @@ const Navbar = () => {
   return (
     <div>
       <Link to="/login">Log in</Link>
+      <Link to="/register">Register</Link>
       <button onClick={handleLogout}>Log out</button>
     </div>
   );
