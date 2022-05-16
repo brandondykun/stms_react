@@ -1,5 +1,6 @@
 import "./App.css";
 import LoginPage from "./Pages/LoginPage";
+import RegisterPage from "./Pages/RegisterPage";
 import CreateAccountPage from "./Pages/CreateAccountPage";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/create-account" element={<CreateAccountPage />} />
