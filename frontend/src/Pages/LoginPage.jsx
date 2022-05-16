@@ -1,10 +1,13 @@
 import apiCalls from "../apiCalls/apiCalls";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleLoginFormSubmit = (e) => {
     e.preventDefault();
@@ -14,9 +17,9 @@ const LoginPage = () => {
     apiCalls
       .login(data)
       .then((res) => {
-        console.log("LOGIN RESPONSE: ", res);
         if (res.status === 200) {
-          console.log("logged in");
+          localStorage.setItem("tokens", JSON.stringify(res.data));
+          navigate("/home");
         }
       })
       .catch((err) => {
