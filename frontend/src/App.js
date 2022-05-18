@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar";
 import MyInfoPage from "./Pages/MyInfoPage";
 import AdminPage from "./Pages/AdminPage";
 import SoldierInfoPage from "./Pages/SoldierInfoPage";
+import CommentsPage from "./Pages/CommentsPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/my-info" element={<MyInfoPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/soldier-info/:id" element={<SoldierInfoPage />} />
+          <Route path="/soldier-info/:id/comments" element={<CommentsPage />} />
           <Route path="/create-account/:id" element={<CreateAccountPage />} />
         </Routes>
       </BrowserRouter>
