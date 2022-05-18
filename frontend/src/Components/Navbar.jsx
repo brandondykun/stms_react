@@ -15,6 +15,7 @@ const Navbar = () => {
       <Link to="/register">Register</Link>
       <Link to="/my-info">My Info</Link>
       <Link to="/admin">Admin</Link>
+      <Link to="/home">Home</Link>
 
       <button onClick={handleLogout}>Log out</button>
     </div>
