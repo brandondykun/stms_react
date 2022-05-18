@@ -20,7 +20,21 @@ const RegisterPage = () => {
       .registerUser(data)
       .then((res) => {
         if (res.status === 201) {
-          navigate("/login");
+          console.log("Register RESPONSE: ", res);
+          // navigate("/login");
+          const id = res.data.id;
+          apiCalls
+            .login(data)
+            .then((res) => {
+              if (res.status === 200) {
+                localStorage.setItem("tokens", JSON.stringify(res.data));
+                navigate(`/create-account/${id}`);
+              }
+            })
+            .catch((err) => {
+              // setErrors(err);
+              console.log(err);
+            });
         }
       })
       .catch((err) => {
