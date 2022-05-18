@@ -7,6 +7,7 @@ import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar";
 import MyInfoPage from "./Pages/MyInfoPage";
 import AdminPage from "./Pages/AdminPage";
+import SoldierInfoPage from "./Pages/SoldierInfoPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/my-info" element={<MyInfoPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/soldier-info/:id" element={<SoldierInfoPage />} />
           <Route path="/create-account/:id" element={<CreateAccountPage />} />
         </Routes>
       </BrowserRouter>
