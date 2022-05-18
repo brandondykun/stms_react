@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar";
 import MyInfoPage from "./Pages/MyInfoPage";
+import AdminPage from "./Pages/AdminPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/my-info" element={<MyInfoPage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/create-account/:id" element={<CreateAccountPage />} />
         </Routes>
       </BrowserRouter>
