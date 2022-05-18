@@ -40,9 +40,6 @@ const CreateAccountForm = () => {
       pebd: pebd,
       date_of_rank: dateOfRank,
       expiration_term_of_service: ets,
-      section: null,
-      team: null,
-      role: null,
       acft_score: acftScore,
       m4_qual: m4Qual,
       dlc_1_complete: dlc1Complete,
@@ -219,7 +216,7 @@ const CreateAccountForm = () => {
           id="dlc_1_complete"
           name="dlc_1_complete"
           value={dlc1Complete}
-          onChange={(e) => setDlc1Complete(e.target.value)}
+          onChange={(e) => setDlc1Complete(!dlc1Complete)}
         />
         <label htmlFor="dlc_1_complete">DLC 1 Complete</label>
 
@@ -228,7 +225,7 @@ const CreateAccountForm = () => {
           id="blc_complete"
           name="blc_complete"
           value={blcComplete}
-          onChange={(e) => setBlcComplete(e.target.value)}
+          onChange={(e) => setBlcComplete(!blcComplete)}
         />
         <label htmlFor="blc_complete">BLC Complete</label>
 
@@ -237,7 +234,7 @@ const CreateAccountForm = () => {
           id="dlc_2_complete"
           name="dlc_2_complete"
           value={dlc2Complete}
-          onChange={(e) => setDlc2Complete(e.target.value)}
+          onChange={(e) => setDlc2Complete(!dlc2Complete)}
         />
         <label htmlFor="dlc_2_complete">DLC 2 Complete</label>
 
@@ -246,7 +243,7 @@ const CreateAccountForm = () => {
           id="alc_complete"
           name="alc_complete"
           value={alcComplete}
-          onChange={(e) => setAlcComplete(e.target.value)}
+          onChange={(e) => setAlcComplete(!alcComplete)}
         />
         <label htmlFor="alc_complete">ALC Complete</label>
 
@@ -255,7 +252,7 @@ const CreateAccountForm = () => {
           id="dlc_3_complete"
           name="dlc_3_complete"
           value={dlc3Complete}
-          onChange={(e) => setDlc3Complete(e.target.value)}
+          onChange={(e) => setDlc3Complete(!dlc3Complete)}
         />
         <label htmlFor="dlc_3_complete">DLC 3 Complete</label>
 
@@ -264,7 +261,7 @@ const CreateAccountForm = () => {
           id="slc_complete"
           name="slc_complete"
           value={slcComplete}
-          onChange={(e) => setSlcComplete(e.target.value)}
+          onChange={(e) => setSlcComplete(!slcComplete)}
         />
         <label htmlFor="slc_complete">SLC Complete</label>
 
@@ -273,7 +270,7 @@ const CreateAccountForm = () => {
           id="jfo_qualified"
           name="jfo_qualified"
           value={jfoQualified}
-          onChange={(e) => setJfoQualified(e.target.value)}
+          onChange={(e) => setJfoQualified(!jfoQualified)}
         />
         <label htmlFor="jfo_qualified">JFO Qualified</label>
 
@@ -282,9 +279,11 @@ const CreateAccountForm = () => {
           id="drivers_license"
           name="drivers_license"
           value={driversLicense}
-          onChange={(e) => setDriversLicense(e.target.value)}
+          onChange={(e) => setDriversLicense(!driversLicense)}
         />
         <label htmlFor="drivers_license">Military Drivers Liscense</label>
+
+        <button type="subimt">Submit</button>
       </form>
     </div>
   );
