@@ -18,38 +18,36 @@ const AddCommentForm = () => {
     };
   };
   return (
-    <div>
-      <form onSubmit={handleAddCommentFormSubmit}>
-        {/* <label htmlFor="soldier"></label>
+    <form onSubmit={handleAddCommentFormSubmit}>
+      {/* <label htmlFor="soldier"></label>
         <input type="number" name="soldier" />
         <label htmlFor="commentor"></label>
         <input type="number" name="commentor" /> */}
-        <label htmlFor="category"></label>
-        <select
-          name="category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="CHARACTER">CHARACTER</option>
-          <option value="PRESENCE">PRESENCE</option>
-          <option value="INTELLECT">INTELLECT</option>
-          <option value="LEADS">LEADS</option>
-          <option value="DEVELOPS">DEVELOPS</option>
-          <option value="ACHIEVES">ACHIEVES</option>
-          <option value="OVERALL">OVERALL</option>
-        </select>
+      <label htmlFor="category"></label>
+      <select
+        name="category"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+      >
+        <option value="CHARACTER">CHARACTER</option>
+        <option value="PRESENCE">PRESENCE</option>
+        <option value="INTELLECT">INTELLECT</option>
+        <option value="LEADS">LEADS</option>
+        <option value="DEVELOPS">DEVELOPS</option>
+        <option value="ACHIEVES">ACHIEVES</option>
+        <option value="OVERALL">OVERALL</option>
+      </select>
 
-        <label htmlFor="comment_text"></label>
-        <input
-          type="text"
-          name="comment_text"
-          value={commentText}
-          onChange={(e) => setCommentText(e.target.value)}
-        />
+      <label htmlFor="comment_text"></label>
+      <input
+        type="text"
+        name="comment_text"
+        value={commentText}
+        onChange={(e) => setCommentText(e.target.value)}
+      />
 
-        <button type="submit">Add Comment</button>
-      </form>
-    </div>
+      <button type="submit">Add Comment</button>
+    </form>
   );
 };
 

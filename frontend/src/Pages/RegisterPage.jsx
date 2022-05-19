@@ -43,24 +43,26 @@ const RegisterPage = () => {
   };
 
   return (
-    <form onSubmit={handleRegisterFormSubmit}>
-      <label htmlFor="username">Username</label>
-      <input
-        type="text"
-        name="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
+    <div className="primary-content">
+      <form className="flex-column-form" onSubmit={handleRegisterFormSubmit}>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Register</button>
-    </form>
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Register</button>
+      </form>
+    </div>
   );
 };
 

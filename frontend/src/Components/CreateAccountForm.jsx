@@ -65,101 +65,100 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <div className="main-content">
-      <form onSubmit={handleCreateAccountFormSubmit}>
-        <label htmlFor="first_name">First Name:</label>
-        <input
-          type="text"
-          placeholder="First Name"
-          name="first_name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
+    <form onSubmit={handleCreateAccountFormSubmit}>
+      <label htmlFor="first_name">First Name:</label>
+      <input
+        type="text"
+        placeholder="First Name"
+        name="first_name"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+      />
 
-        <label htmlFor="middle_name">Middle Name:</label>
-        <input
-          type="text"
-          placeholder="Middle Name"
-          name="middle_name"
-          value={middleName}
-          onChange={(e) => setMiddleName(e.target.value)}
-        />
+      <label htmlFor="middle_name">Middle Name:</label>
+      <input
+        type="text"
+        placeholder="Middle Name"
+        name="middle_name"
+        value={middleName}
+        onChange={(e) => setMiddleName(e.target.value)}
+      />
 
-        <label htmlFor="last_name">Last Name:</label>
-        <input
-          type="text"
-          placeholder="Last Name"
-          name="last_name"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
+      <label htmlFor="last_name">Last Name:</label>
+      <input
+        type="text"
+        placeholder="Last Name"
+        name="last_name"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
+      />
 
-        <label htmlFor="rank">Rank:</label>
-        <select
-          name="rank"
-          id="rank"
-          value={rank}
-          onChange={(e) => setRank(e.target.value)}
-        >
-          <option value="PVT">PVT</option>
-          <option value="PV2">PV2</option>
-          <option value="PFC">PFC</option>
-          <option value="SPC">SPC</option>
-          <option value="SPC">SGT</option>
-          <option value="SPC">SSG</option>
-          <option value="SPC">SFC</option>
-          <option value="2LT">2LT</option>
-          <option value="1LT">1LT</option>
-          <option value="CPT">CPT</option>
-        </select>
+      <label htmlFor="rank">Rank:</label>
+      <select
+        name="rank"
+        id="rank"
+        value={rank}
+        onChange={(e) => setRank(e.target.value)}
+      >
+        <option value="PVT">PVT</option>
+        <option value="PV2">PV2</option>
+        <option value="PFC">PFC</option>
+        <option value="SPC">SPC</option>
+        <option value="SPC">SGT</option>
+        <option value="SPC">SSG</option>
+        <option value="SPC">SFC</option>
+        <option value="2LT">2LT</option>
+        <option value="1LT">1LT</option>
+        <option value="CPT">CPT</option>
+      </select>
 
-        <label htmlFor="grade">Grade:</label>
-        <select
-          name="grade"
-          id="grade"
-          value={grade}
-          onChange={(e) => setGrade(e.target.value)}
-        >
-          <option value="E1">E1</option>
-          <option value="E2">E2</option>
-          <option value="E3">E3</option>
-          <option value="E4">E4</option>
-          <option value="E5">E5</option>
-          <option value="E6">E6</option>
-          <option value="E7">E7</option>
-          <option value="O1">O1</option>
-          <option value="O2">O2</option>
-          <option value="O3">O3</option>
-        </select>
+      <label htmlFor="grade">Grade:</label>
+      <select
+        name="grade"
+        id="grade"
+        value={grade}
+        onChange={(e) => setGrade(e.target.value)}
+      >
+        <option value="E1">E1</option>
+        <option value="E2">E2</option>
+        <option value="E3">E3</option>
+        <option value="E4">E4</option>
+        <option value="E5">E5</option>
+        <option value="E6">E6</option>
+        <option value="E7">E7</option>
+        <option value="O1">O1</option>
+        <option value="O2">O2</option>
+        <option value="O3">O3</option>
+      </select>
 
-        <label htmlFor="pebd">PEBD:</label>
-        <input
-          type="date"
-          id="pebd"
-          name="pebd"
-          value={pebd}
-          onChange={(e) => setPebd(e.target.value)}
-        />
+      <label htmlFor="pebd">PEBD:</label>
+      <input
+        type="date"
+        id="pebd"
+        name="pebd"
+        value={pebd}
+        onChange={(e) => setPebd(e.target.value)}
+      />
 
-        <label htmlFor="date_of_rank">Date of Rank:</label>
-        <input
-          type="date"
-          id="date_of_rank"
-          name="date_of_rank"
-          value={dateOfRank}
-          onChange={(e) => setDateOfRank(e.target.value)}
-        />
+      <label htmlFor="date_of_rank">Date of Rank:</label>
+      <input
+        type="date"
+        id="date_of_rank"
+        name="date_of_rank"
+        value={dateOfRank}
+        onChange={(e) => setDateOfRank(e.target.value)}
+      />
 
-        <label htmlFor="ets">ETS:</label>
-        <input
-          type="date"
-          id="ets"
-          name="ets"
-          value={ets}
-          onChange={(e) => setEts(e.target.value)}
-        />
+      <label htmlFor="ets">ETS:</label>
+      <input
+        type="date"
+        id="ets"
+        name="ets"
+        value={ets}
+        onChange={(e) => setEts(e.target.value)}
+      />
 
-        {/* <label for="section">Section:</label>
+      {/* <label for="section">Section:</label>
         <select name="section" id="section">
           <option value="BN STAFF">BN STAFF</option>
           <option value="ALPHA">ALPHA</option>
@@ -168,7 +167,7 @@ const CreateAccountForm = () => {
           <option value="DELTA">DELTA</option>
           <option value="UNASSIGNED">UNASSIGNED</option>
         </select> */}
-        {/* <label for="team">Team:</label>
+      {/* <label for="team">Team:</label>
         <select name="team" id="team">
           <option value="HQ">HQ</option>
           <option value="1">1</option>
@@ -176,7 +175,7 @@ const CreateAccountForm = () => {
           <option value="3">3</option>
           <option value="UNASSIGNED">UNASSIGNED</option>
         </select> */}
-        {/* <label for="role">Role:</label>
+      {/* <label for="role">Role:</label>
         <select name="role" id="role">
           <option value="BN FSO">BN FSO</option>
           <option value="BN FSNCO">BN FSNCO</option>
@@ -189,103 +188,102 @@ const CreateAccountForm = () => {
           <option value="RTO">RTO</option>
           <option value="UNASSIGNED">UNASSIGNED</option>
         </select> */}
-        <label htmlFor="acft_score">ACFT:</label>
-        <input
-          type="number"
-          id="acft_score"
-          name="acft_score"
-          min="0"
-          max="600"
-          value={acftScore}
-          onChange={(e) => setAcftScore(e.target.value)}
-        />
+      <label htmlFor="acft_score">ACFT:</label>
+      <input
+        type="number"
+        id="acft_score"
+        name="acft_score"
+        min="0"
+        max="600"
+        value={acftScore}
+        onChange={(e) => setAcftScore(e.target.value)}
+      />
 
-        <label htmlFor="m4_qual">M4 Qual:</label>
-        <input
-          type="number"
-          id="m4_qual"
-          name="m4_qual"
-          min="0"
-          max="600"
-          value={m4Qual}
-          onChange={(e) => setM4Qual(e.target.value)}
-        />
+      <label htmlFor="m4_qual">M4 Qual:</label>
+      <input
+        type="number"
+        id="m4_qual"
+        name="m4_qual"
+        min="0"
+        max="600"
+        value={m4Qual}
+        onChange={(e) => setM4Qual(e.target.value)}
+      />
 
-        <input
-          type="checkbox"
-          id="dlc_1_complete"
-          name="dlc_1_complete"
-          value={dlc1Complete}
-          onChange={(e) => setDlc1Complete(!dlc1Complete)}
-        />
-        <label htmlFor="dlc_1_complete">DLC 1 Complete</label>
+      <input
+        type="checkbox"
+        id="dlc_1_complete"
+        name="dlc_1_complete"
+        value={dlc1Complete}
+        onChange={(e) => setDlc1Complete(!dlc1Complete)}
+      />
+      <label htmlFor="dlc_1_complete">DLC 1 Complete</label>
 
-        <input
-          type="checkbox"
-          id="blc_complete"
-          name="blc_complete"
-          value={blcComplete}
-          onChange={(e) => setBlcComplete(!blcComplete)}
-        />
-        <label htmlFor="blc_complete">BLC Complete</label>
+      <input
+        type="checkbox"
+        id="blc_complete"
+        name="blc_complete"
+        value={blcComplete}
+        onChange={(e) => setBlcComplete(!blcComplete)}
+      />
+      <label htmlFor="blc_complete">BLC Complete</label>
 
-        <input
-          type="checkbox"
-          id="dlc_2_complete"
-          name="dlc_2_complete"
-          value={dlc2Complete}
-          onChange={(e) => setDlc2Complete(!dlc2Complete)}
-        />
-        <label htmlFor="dlc_2_complete">DLC 2 Complete</label>
+      <input
+        type="checkbox"
+        id="dlc_2_complete"
+        name="dlc_2_complete"
+        value={dlc2Complete}
+        onChange={(e) => setDlc2Complete(!dlc2Complete)}
+      />
+      <label htmlFor="dlc_2_complete">DLC 2 Complete</label>
 
-        <input
-          type="checkbox"
-          id="alc_complete"
-          name="alc_complete"
-          value={alcComplete}
-          onChange={(e) => setAlcComplete(!alcComplete)}
-        />
-        <label htmlFor="alc_complete">ALC Complete</label>
+      <input
+        type="checkbox"
+        id="alc_complete"
+        name="alc_complete"
+        value={alcComplete}
+        onChange={(e) => setAlcComplete(!alcComplete)}
+      />
+      <label htmlFor="alc_complete">ALC Complete</label>
 
-        <input
-          type="checkbox"
-          id="dlc_3_complete"
-          name="dlc_3_complete"
-          value={dlc3Complete}
-          onChange={(e) => setDlc3Complete(!dlc3Complete)}
-        />
-        <label htmlFor="dlc_3_complete">DLC 3 Complete</label>
+      <input
+        type="checkbox"
+        id="dlc_3_complete"
+        name="dlc_3_complete"
+        value={dlc3Complete}
+        onChange={(e) => setDlc3Complete(!dlc3Complete)}
+      />
+      <label htmlFor="dlc_3_complete">DLC 3 Complete</label>
 
-        <input
-          type="checkbox"
-          id="slc_complete"
-          name="slc_complete"
-          value={slcComplete}
-          onChange={(e) => setSlcComplete(!slcComplete)}
-        />
-        <label htmlFor="slc_complete">SLC Complete</label>
+      <input
+        type="checkbox"
+        id="slc_complete"
+        name="slc_complete"
+        value={slcComplete}
+        onChange={(e) => setSlcComplete(!slcComplete)}
+      />
+      <label htmlFor="slc_complete">SLC Complete</label>
 
-        <input
-          type="checkbox"
-          id="jfo_qualified"
-          name="jfo_qualified"
-          value={jfoQualified}
-          onChange={(e) => setJfoQualified(!jfoQualified)}
-        />
-        <label htmlFor="jfo_qualified">JFO Qualified</label>
+      <input
+        type="checkbox"
+        id="jfo_qualified"
+        name="jfo_qualified"
+        value={jfoQualified}
+        onChange={(e) => setJfoQualified(!jfoQualified)}
+      />
+      <label htmlFor="jfo_qualified">JFO Qualified</label>
 
-        <input
-          type="checkbox"
-          id="drivers_license"
-          name="drivers_license"
-          value={driversLicense}
-          onChange={(e) => setDriversLicense(!driversLicense)}
-        />
-        <label htmlFor="drivers_license">Military Drivers Liscense</label>
+      <input
+        type="checkbox"
+        id="drivers_license"
+        name="drivers_license"
+        value={driversLicense}
+        onChange={(e) => setDriversLicense(!driversLicense)}
+      />
+      <label htmlFor="drivers_license">Military Drivers Liscense</label>
 
-        <button type="subimt">Submit</button>
-      </form>
-    </div>
+      <button type="subimt">Submit</button>
+    </form>
   );
 };
 

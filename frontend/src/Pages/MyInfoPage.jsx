@@ -1,6 +1,6 @@
 const MyInfoPage = () => {
   return (
-    <div className="main-content">
+    <div className="primary-content">
       <div>This is the my info page</div>
     </div>
   );

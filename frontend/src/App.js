@@ -10,6 +10,7 @@ import AdminPage from "./Pages/AdminPage";
 import SoldierInfoPage from "./Pages/SoldierInfoPage";
 import CommentsPage from "./Pages/CommentsPage";
 import { useState } from "react";
+import Footer from "./Components/Footer";
 
 function App() {
   const [userId, setUserId] = useState();
@@ -31,6 +32,7 @@ function App() {
           />
           <Route path="/create-account/:id" element={<CreateAccountPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

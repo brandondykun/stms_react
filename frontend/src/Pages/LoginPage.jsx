@@ -29,23 +29,29 @@ const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={handleLoginFormSubmit}>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Username"
-        aria-label="Username"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        aria-label="Password"
-      />
-      <button type="submit">Log in</button>
-    </form>
+    <div className="primary-content">
+      <form className="flex-column-form" onSubmit={handleLoginFormSubmit}>
+        <label htmlFor="username">Username</label>
+        <input
+          name="username"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          // placeholder="Username"
+          aria-label="Username"
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          // placeholder="Password"
+          aria-label="Password"
+        />
+        <button type="submit">Log in</button>
+      </form>
+    </div>
   );
 };
 

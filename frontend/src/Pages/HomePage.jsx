@@ -17,7 +17,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="main-content">
+    <div className="primary-content">
       <h1>Homepage</h1>
       {allSoldiers &&
         allSoldiers.map((soldier) => {

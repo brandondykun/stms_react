@@ -5,7 +5,7 @@ const CommentsPage = () => {
   const { id } = useParams();
 
   return (
-    <div className="main-content">
+    <div className="primary-content">
       <div>Comments Page for {id}</div>
       <AddCommentForm />
     </div>

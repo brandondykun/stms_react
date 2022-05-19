@@ -1,38 +1,67 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.primary-nav {
+  background-color: grey;
+  padding: 0 1rem;
+  border-bottom: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-link {
+  margin: 0 .5rem;
+  text-decoration: none;
+  background-color: grey;
+  border: none;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  display: inline-block;
+  padding: 1rem;
 }
+
+.navbar-link:hover {
+  cursor: pointer;
+  color: grey;
+  background-color: black;
+}
+
+.primary-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+.primary-footer {
+  background-color: grey;
+  padding: .5rem;
+  border-top: 1px solid black;
+}
+
+.flex-column-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-form > label {
+  text-align: left;
+}
+
+.flex-column-form > input {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  padding: .2rem;
+}
+
+.flex-column-form {
+  font-size: 1.2rem;
+}
+
+.flex-column-form > button {
+  padding: .5rem;
+  font-size: 1.2rem;
+}
+
+
