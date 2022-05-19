@@ -32,6 +32,8 @@
 .primary-content {
   flex: 1;
   padding: 1rem;
+  background-color: black;
+  color: white;
 }
 
 .primary-footer {
@@ -64,4 +66,30 @@
   font-size: 1.2rem;
 }
 
+.section-container {
+  padding: 1rem;
+  border: 1px solid white;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
 
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.name-link {
+  text-decoration: none;
+  color: white;
+  margin-left: .5rem;
+}
+
+.name-link:hover {
+  font-style: italic;
+}
+
+.soldier-role-name-container {
+  display: flex;
+  font-size: 1.2rem;
+}
