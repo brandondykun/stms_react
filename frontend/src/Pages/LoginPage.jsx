@@ -13,7 +13,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     const data = { username: username, password: password };
-    console.log("DATA: ", data);
+    // console.log("DATA: ", data);
     apiCalls
       .login(data)
       .then((res) => {
