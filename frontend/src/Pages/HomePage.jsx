@@ -1,6 +1,7 @@
 import apiCalls from "../apiCalls/apiCalls";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import SectionBox from "../Components/SectionBox";
 
 const HomePage = () => {
   const [allSoldiers, setAllSoldiers] = useState();
@@ -19,17 +20,11 @@ const HomePage = () => {
   return (
     <div className="primary-content">
       <h1>Homepage</h1>
-      {allSoldiers &&
-        allSoldiers.map((soldier) => {
-          return (
-            <Link
-              to={`/soldier-info/${soldier.id}`}
-              style={{ display: "block" }}
-            >
-              {soldier.rank} {soldier.last_name}
-            </Link>
-          );
-        })}
+      <SectionBox soldiers={allSoldiers} section="BN STAFF" />
+      <SectionBox soldiers={allSoldiers} section="ALPHA" />
+      <SectionBox soldiers={allSoldiers} section="BRAVO" />
+      <SectionBox soldiers={allSoldiers} section="CHARLIE" />
+      <SectionBox soldiers={allSoldiers} section="UNASSIGNED" />
     </div>
   );
 };
