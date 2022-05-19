@@ -16,4 +16,8 @@ apiCalls.createAccount = (data) => {
   return axios.post(`${BASE_URL}soldiers/`, data);
 };
 
+apiCalls.getAllSoldiers = () => {
+  return axios.get(`${BASE_URL}soldiers/`);
+};
+
 export default apiCalls;
