@@ -20,4 +20,8 @@ apiCalls.getAllSoldiers = () => {
   return axios.get(`${BASE_URL}soldiers/`);
 };
 
+apiCalls.getSoldierById = (id) => {
+  return axios.get(`${BASE_URL}soldiers/${id}`);
+};
+
 export default apiCalls;
