@@ -1,4 +1,9 @@
 const SoldierDetails = ({ currentSoldier }) => {
+  const etsDate = new Date(currentSoldier.expiration_term_of_service);
+  const currentDate = new Date();
+  const timeUntilEts = etsDate.getTime() - currentDate.getTime();
+  const daysUntilEts = Math.ceil(timeUntilEts / (1000 * 3600 * 24));
+
   return (
     <div>
       <h2>
@@ -21,6 +26,7 @@ const SoldierDetails = ({ currentSoldier }) => {
           <div>PEBD: {currentSoldier.pebd}</div>
           <div>Date of Rank: {currentSoldier.date_of_rank}</div>
           <div>ETS: {currentSoldier.expiration_term_of_service}</div>
+          <div>Days Until ETS: {daysUntilEts}</div>
         </div>
       </div>
       <div className="soldier-details-container">
