@@ -5,11 +5,19 @@ import { useState } from "react";
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState(null);
 
   const navigate = useNavigate();
 
   const handleRegisterFormSubmit = (e) => {
     e.preventDefault();
+    setErrors(null);
+
+    if (password !== confirmPassword) {
+      setErrors("Passwords do not match.");
+      return null;
+    }
 
     const data = {
       username: username,
@@ -21,7 +29,6 @@ const RegisterPage = () => {
       .then((res) => {
         if (res.status === 201) {
           console.log("Register RESPONSE: ", res);
-          // navigate("/login");
           const id = res.data.id;
           apiCalls
             .login(data)
@@ -32,12 +39,14 @@ const RegisterPage = () => {
               }
             })
             .catch((err) => {
-              // setErrors(err);
               console.log(err);
             });
         }
       })
       .catch((err) => {
+        if (err.response.data.username[0]) {
+          setErrors(err.response.data.username[0]);
+        }
         console.log(err);
       });
   };
@@ -60,8 +69,16 @@ const RegisterPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <label htmlFor="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          name="confirm-password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
         <button type="submit">Register</button>
       </form>
+      {errors && <div className="error-text-container">{errors}</div>}
     </div>
   );
 };
