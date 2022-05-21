@@ -24,4 +24,8 @@ apiCalls.getSoldierById = (id) => {
   return axios.get(`${BASE_URL}soldiers/${id}`);
 };
 
+apiCalls.getAllComments = () => {
+  return axios.get(`${BASE_URL}comments/`);
+};
+
 export default apiCalls;
