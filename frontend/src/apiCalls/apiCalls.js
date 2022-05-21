@@ -28,4 +28,8 @@ apiCalls.getAllComments = () => {
   return axios.get(`${BASE_URL}comments/`);
 };
 
+apiCalls.addComment = (data) => {
+  return axios.post(`${BASE_URL}comments/`, data);
+};
+
 export default apiCalls;
