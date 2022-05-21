@@ -114,3 +114,9 @@
   font-size: 1.1rem;
   text-align: left;
 }
+
+.error-text-container {
+  color: red;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
