@@ -125,6 +125,22 @@
   display: none;
 }
 
+.comments-container {
+  margin: 2rem;
+  border: 1px solid white;
+  /* padding: 1rem; */
+  border-radius: 15px;
+}
+
+.comments-container-title {
+  border-bottom: 1px solid white;
+  padding: .8rem 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: grey;
+  border-radius: 15px 15px 0 0;
+}
+
 
 
 
