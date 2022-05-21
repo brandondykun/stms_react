@@ -12,23 +12,33 @@ const Navbar = () => {
   return (
     <div className="primary-nav">
       <Link className="navbar-link" to="/login">
-        Log in
+        <span className="nav-link-text">Log In</span>{" "}
+        <i class="fa-solid fa-right-to-bracket"></i>
       </Link>
+
       <Link className="navbar-link" to="/register">
-        Register
+        <span className="nav-link-text">Register</span>{" "}
+        <i class="fa-solid fa-user-plus"></i>
       </Link>
+
       <Link className="navbar-link" to="/my-info">
-        My Info
+        <span className="nav-link-text">My Info</span>{" "}
+        <i class="fa-solid fa-user"></i>
       </Link>
+
       <Link className="navbar-link" to="/admin">
-        Admin
+        <span className="nav-link-text">Admin</span>{" "}
+        <i class="fa-solid fa-list-check"></i>
       </Link>
+
       <Link className="navbar-link" to="/home">
-        Home
+        <span className="nav-link-text">Home</span>{" "}
+        <i class="fa-solid fa-house"></i>
       </Link>
 
       <button className="navbar-link" onClick={handleLogout}>
-        Log out
+        <span className="nav-link-text">Log Out</span>{" "}
+        <i class="fa-solid fa-right-from-bracket"></i>
       </button>
     </div>
   );
