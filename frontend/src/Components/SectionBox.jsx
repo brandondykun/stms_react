@@ -19,7 +19,7 @@ const SectionBox = ({ section, soldiers }) => {
       {filteredSoldiers &&
         filteredSoldiers.map((soldier) => {
           return (
-            <div className="soldier-role-name-container">
+            <div key={soldier.id} className="soldier-role-name-container">
               <div>{soldier.role}</div>
               <Link
                 to={`/soldier-info/${soldier.id}`}
