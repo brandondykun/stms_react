@@ -50,7 +50,10 @@ const CommentsPage = () => {
         allComments={allComments}
         category={"OVERALL"}
       />
-      <AddCommentForm allComments={allComments} />
+      <AddCommentForm
+        allComments={allComments}
+        setAllComments={setAllComments}
+      />
     </div>
   );
 };
