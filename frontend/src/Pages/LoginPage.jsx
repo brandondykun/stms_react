@@ -1,8 +1,9 @@
 import apiCalls from "../apiCalls/apiCalls";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
-const LoginPage = () => {
+const LoginPage = ({ setUserId }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(null);
@@ -18,6 +19,8 @@ const LoginPage = () => {
       .login(data)
       .then((res) => {
         if (res.status === 200) {
+          const decodedToken = jwt_decode(res.data.access);
+          setUserId(decodedToken);
           localStorage.setItem("tokens", JSON.stringify(res.data));
           navigate("/home");
         }
