@@ -68,19 +68,6 @@
   font-size: 1.2rem;
 }
 
-.section-container {
-  padding: 1rem;
-  border: 1px solid white;
-  margin: 1rem 0;
-  border-radius: 10px;
-}
-
-.section-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
 .name-link {
   text-decoration: none;
   color: white;
@@ -93,16 +80,17 @@
 
 .soldier-role-name-container {
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-.soldier-details-container {
+
+.info-box-container {
   border: 1px solid white;
   border-radius: 15px;
   margin-bottom: 2rem;
 }
 
-.soldier-details-container-title {
+.info-box-title {
   border-bottom: 1px solid white;
   padding: .8rem 0;
   font-size: 1.3rem;
@@ -111,7 +99,7 @@
   border-radius: 15px 15px 0 0;
 }
 
-.soldier-details-info-container {
+.info-box-content-container {
   padding: 1rem;
   font-size: 1.1rem;
   text-align: left;
@@ -141,10 +129,6 @@
   background-color: grey;
   border-radius: 15px 15px 0 0;
 }
-
-
-
-
 
 
 @media only screen and (min-width: 600px) {

@@ -14,23 +14,25 @@ const SectionBox = ({ section, soldiers }) => {
   }, [soldiers]);
 
   return (
-    <div className="section-container">
-      <div className="section-title">{section}</div>
-      {filteredSoldiers &&
-        filteredSoldiers.map((soldier) => {
-          return (
-            <div key={soldier.id} className="soldier-role-name-container">
-              <div>{soldier.role}</div>
-              <Link
-                to={`/soldier-info/${soldier.id}`}
-                style={{ display: "inline-block" }}
-                className="name-link"
-              >
-                {soldier.rank} {soldier.last_name}
-              </Link>
-            </div>
-          );
-        })}
+    <div className="info-box-container">
+      <div className="info-box-title">{section}</div>
+      <div className="info-box-content-container">
+        {filteredSoldiers &&
+          filteredSoldiers.map((soldier) => {
+            return (
+              <div key={soldier.id} className="soldier-role-name-container">
+                <div>{soldier.role}</div>
+                <Link
+                  to={`/soldier-info/${soldier.id}`}
+                  style={{ display: "inline-block" }}
+                  className="name-link"
+                >
+                  {soldier.rank} {soldier.last_name}
+                </Link>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };
