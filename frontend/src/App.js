@@ -45,7 +45,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar setUser={setUser} setUserId={setUserId} userId={userId} />
+        <Navbar
+          setUser={setUser}
+          setUserId={setUserId}
+          userId={userId}
+          user={user}
+        />
         <Routes>
           <Route path="/register" element={<RegisterPage />} />
           <Route
