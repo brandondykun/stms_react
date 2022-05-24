@@ -28,7 +28,7 @@ const LoginPage = ({ setUserId, setUser }) => {
 
           const soldier = await apiCalls.getSoldierById(soldier_id);
           if (soldier.status === 200) {
-            setUser(soldier);
+            setUser(soldier.data);
             navigate("/home");
           }
         }
