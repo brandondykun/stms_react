@@ -14,38 +14,24 @@ const LoginPage = ({ setUserId, setUser }) => {
     e.preventDefault();
 
     const data = { username: username, password: password };
-    // console.log("DATA: ", data);
-    // apiCalls
-    //   .login(data)
-    //   .then((res) => {
-    //     if (res.status === 200) {
-    //       const decodedToken = jwt_decode(res.data.access);
-    //       setUserId(decodedToken);
-    //       localStorage.setItem("tokens", JSON.stringify(res.data));
-    //       // navigate("/home");
-    //       return decodedToken.user_id;
-    //     }
-    //   })
-    //   .then((res) => {
-    //     apiCalls.getUserById(res)
-    //     // navigate("/home");
-    //   })
-    //   .catch((err) => {
-    //     setErrors(err);
-    //     console.log(err);
-    //   });
 
     const setLoginUserData = async () => {
       const loginRes = await apiCalls.login(data);
       if (loginRes.status === 200) {
         const decodedToken = jwt_decode(loginRes.data.access);
-        setUserId(decodedToken);
+        setUserId(decodedToken.user_id);
         localStorage.setItem("tokens", JSON.stringify(loginRes.data));
+
         const user = await apiCalls.getUserById(decodedToken.user_id);
-        const soldier_id = user.data.soldier;
-        const soldier = await apiCalls.getSoldierById(soldier_id);
-        setUser(soldier);
-        navigate("/home");
+        if (user.status === 200) {
+          const soldier_id = user.data.soldier;
+
+          const soldier = await apiCalls.getSoldierById(soldier_id);
+          if (soldier.status === 200) {
+            setUser(soldier);
+            navigate("/home");
+          }
+        }
       }
     };
 
