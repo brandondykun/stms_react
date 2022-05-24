@@ -32,4 +32,8 @@ apiCalls.addComment = (data) => {
   return axios.post(`${BASE_URL}comments/`, data);
 };
 
+apiCalls.getUserById = (id) => {
+  return axios.get(`${BASE_URL}users/${id}`);
+};
+
 export default apiCalls;
