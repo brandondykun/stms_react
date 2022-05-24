@@ -1,7 +1,9 @@
-const MyInfoPage = () => {
+import SoldierDetails from "../Components/SoldierDetails";
+
+const MyInfoPage = ({ user, setUser }) => {
   return (
     <div className="primary-content">
-      <div>This is the my info page</div>
+      <SoldierDetails currentSoldier={user} />
     </div>
   );
 };
