@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        <Navbar setUser={setUser} setUserId={setUserId} />
         <Routes>
           <Route path="/register" element={<RegisterPage />} />
           <Route
