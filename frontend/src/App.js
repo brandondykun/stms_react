@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar setUser={setUser} setUserId={setUserId} />
+        <Navbar setUser={setUser} setUserId={setUserId} userId={userId} />
         <Routes>
           <Route path="/register" element={<RegisterPage />} />
           <Route
@@ -29,7 +29,10 @@ function App() {
           />
           <Route element={<ProtectedRoute userId={userId} />}>
             <Route path="/home" element={<HomePage />} />
-            <Route path="/my-info" element={<MyInfoPage />} />
+            <Route
+              path="/my-info"
+              element={<MyInfoPage user={user} setUser={setUser} />}
+            />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/soldier-info/:id" element={<SoldierInfoPage />} />
             <Route
