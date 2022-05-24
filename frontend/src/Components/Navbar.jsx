@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ setUserId, setUser, userId }) => {
+const Navbar = ({ setUserId, setUser, userId, user }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -34,7 +34,7 @@ const Navbar = ({ setUserId, setUser, userId }) => {
         </Link>
       )}
 
-      {userId && (
+      {userId && user && user.is_leader && (
         <Link className="navbar-link" to="/admin">
           <span className="nav-link-text">Admin</span>{" "}
           <i class="fa-solid fa-list-check"></i>
