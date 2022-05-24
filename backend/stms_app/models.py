@@ -86,9 +86,15 @@ class Soldier(models.Model):
     slc_complete = models.BooleanField(default=False, blank=True)
     jfo_qualified = models.BooleanField(default=False, blank=True)
     drivers_license = models.BooleanField(default=False, blank=True)
+    is_leader = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+    def save(self, *args, **kwargs):
+        if self.role == "BN FSO" or self.role == "BN FSNCO" or self.role == "CO FSO" or self.role == "CO FSNCO":
+            self.is_leader = True
+        super(Soldier, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):
