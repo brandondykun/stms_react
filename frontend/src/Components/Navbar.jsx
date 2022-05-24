@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setUserId, setUser }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("tokens");
+    setUser(null);
+    setUserId(null);
     navigate("/login");
   };
 
