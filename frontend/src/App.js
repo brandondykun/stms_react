@@ -23,7 +23,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage setUserId={setUserId} />} />
+          <Route
+            path="/login"
+            element={<LoginPage setUserId={setUserId} setUser={setUser} />}
+          />
           <Route element={<ProtectedRoute userId={userId} />}>
             <Route path="/home" element={<HomePage />} />
             <Route path="/my-info" element={<MyInfoPage />} />
