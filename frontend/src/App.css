@@ -90,19 +90,36 @@
   margin-bottom: 2rem;
 }
 
+
+
 .info-box-title {
   border-bottom: 1px solid white;
-  padding: .8rem 0;
   font-size: 1.3rem;
   font-weight: bold;
   background-color: grey;
   border-radius: 15px 15px 0 0;
 }
 
+.info-box-title-text {
+  margin: auto 0 auto 1rem;
+}
+
 .info-box-content-container {
   padding: 1rem;
   font-size: 1.1rem;
   text-align: left;
+}
+
+.info-box-content-container > div {
+  padding: .2rem;
+}
+
+.edit-form-input-container {
+  padding: .2rem;
+}
+
+.edit-form-input-container > label {
+  margin-right: .5rem;
 }
 
 .error-text-container {
@@ -128,6 +145,24 @@
   font-weight: bold;
   background-color: grey;
   border-radius: 15px 15px 0 0;
+}
+
+.info-box-title.with-edit-button {
+  display: flex;
+  justify-content: space-between;
+  padding: none;
+  min-height: 40px;
+}
+
+.title-box-button {
+  height: 2.5rem;
+  border-radius: 0 13px 0 0;
+  border: none;
+  width: 4rem;
+}
+
+.title-box-button:hover {
+  cursor: pointer;
 }
 
 
