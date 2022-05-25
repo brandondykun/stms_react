@@ -12,6 +12,7 @@ import CommentsPage from "./Pages/CommentsPage";
 import { useEffect, useState } from "react";
 import Footer from "./Components/Footer";
 import ProtectedRoute from "./utils/ProtectedRoute";
+import AdminRoute from "./utils/AdminRoute";
 import jwt_decode from "jwt-decode";
 import apiCalls from "./apiCalls/apiCalls";
 
@@ -65,13 +66,16 @@ function App() {
               path="/my-info"
               element={<MyInfoPage user={user} setUser={setUser} />}
             />
-            <Route path="/admin" element={<AdminPage />} />
+
             <Route path="/soldier-info/:id" element={<SoldierInfoPage />} />
             <Route
               path="/soldier-info/:id/comments"
               element={<CommentsPage userId={userId} />}
             />
             <Route path="/create-account/:id" element={<CreateAccountPage />} />
+          </Route>
+          <Route element={<AdminRoute user={user} isLoading={isLoading} />}>
+            <Route path="/admin" element={<AdminPage />} />
           </Route>
         </Routes>
         <Footer />
