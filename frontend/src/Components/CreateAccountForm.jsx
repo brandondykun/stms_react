@@ -104,9 +104,9 @@ const CreateAccountForm = () => {
         <option value="PV2">PV2</option>
         <option value="PFC">PFC</option>
         <option value="SPC">SPC</option>
-        <option value="SPC">SGT</option>
-        <option value="SPC">SSG</option>
-        <option value="SPC">SFC</option>
+        <option value="SGT">SGT</option>
+        <option value="SSG">SSG</option>
+        <option value="SFC">SFC</option>
         <option value="2LT">2LT</option>
         <option value="1LT">1LT</option>
         <option value="CPT">CPT</option>
