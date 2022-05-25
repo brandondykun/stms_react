@@ -19,7 +19,12 @@ const SoldierInfoPage = () => {
   return (
     <div className="primary-content">
       <div>Soldier {id} info page</div>
-      {currentSoldier && <SoldierDetails currentSoldier={currentSoldier} />}
+      {currentSoldier && (
+        <SoldierDetails
+          currentSoldier={currentSoldier}
+          setCurrentSoldier={setCurrentSoldier}
+        />
+      )}
       <Link to={`/soldier-info/${id}/comments`}>View Comments</Link>
     </div>
   );
