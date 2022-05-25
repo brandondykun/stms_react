@@ -36,4 +36,8 @@ apiCalls.getUserById = (id) => {
   return axios.get(`${BASE_URL}users/${id}`);
 };
 
+apiCalls.updateSoldierInfo = (id, data) => {
+  return axios.patch(`${BASE_URL}soldiers/${id}`, data);
+};
+
 export default apiCalls;
