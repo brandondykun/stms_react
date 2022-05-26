@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import apiCalls from "../apiCalls/apiCalls";
 
 const ScoresInfoBox = ({
@@ -7,9 +7,11 @@ const ScoresInfoBox = ({
   editSection,
   setEditSection,
   setCurrentSoldier,
+  loggedInSoldier,
 }) => {
   const [acftScore, setAcftScore] = useState(currentSoldier.acft_score);
   const [m4Qual, setM4Qual] = useState(currentSoldier.m4_qual);
+  const [loggedInSoldierCanEdit, setLoggedInSoldierCanEdit] = useState(false);
 
   const handleScoresFormSubmit = (e) => {
     e.preventDefault();
@@ -32,11 +34,17 @@ const ScoresInfoBox = ({
       });
   };
 
+  useEffect(() => {
+    if (loggedInSoldier.id === currentSoldier.id || loggedInSoldier.is_leader) {
+      setLoggedInSoldierCanEdit(true);
+    }
+  }, [currentSoldier]);
+
   return (
     <div className="info-box-container">
       <div className="info-box-title with-edit-button">
         <div className="info-box-title-text">Scores</div>
-        {editSection !== "Scores" && (
+        {loggedInSoldierCanEdit && editSection !== "Scores" && (
           <button
             onClick={() => handleChangeEditSection("Scores")}
             className="title-box-button"
