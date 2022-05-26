@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import apiCalls from "../apiCalls/apiCalls";
 
 const RankAndDatesInfoBox = ({
@@ -7,12 +7,14 @@ const RankAndDatesInfoBox = ({
   editSection,
   setEditSection,
   setCurrentSoldier,
+  loggedInSoldier,
 }) => {
   const [grade, setGrade] = useState(currentSoldier.grade);
   const [rank, setRank] = useState(currentSoldier.rank);
   const [pebd, setPebd] = useState(currentSoldier.pebd);
   const [dateOfRank, setDateOfRank] = useState(currentSoldier.date_of_rank);
   const [ets, setEts] = useState(currentSoldier.expiration_term_of_service);
+  const [loggedInSoldierCanEdit, setLoggedInSoldierCanEdit] = useState(false);
 
   const etsDate = new Date(currentSoldier.expiration_term_of_service);
   const currentDate = new Date();
@@ -43,11 +45,20 @@ const RankAndDatesInfoBox = ({
       });
   };
 
+  useEffect(() => {
+    if (loggedInSoldier.id === currentSoldier.id || loggedInSoldier.is_leader) {
+      setLoggedInSoldierCanEdit(true);
+    }
+  }, [currentSoldier]);
+
   return (
     <div className="info-box-container">
       <div className="info-box-title with-edit-button">
         <div className="info-box-title-text">Rank/Dates</div>
-        {editSection !== "Rank/Dates" && (
+        {console.log("CURRENT SOLDIER: ", currentSoldier)}
+        {console.log("LOGGED IN SOLDIER: ", loggedInSoldier)}
+
+        {loggedInSoldierCanEdit && editSection !== "Rank/Dates" && (
           <button
             onClick={() => handleChangeEditSection("Rank/Dates")}
             className="title-box-button"
