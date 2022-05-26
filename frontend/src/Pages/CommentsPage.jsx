@@ -50,11 +50,13 @@ const CommentsPage = ({ loggedInSoldier }) => {
         allComments={allComments}
         category={"OVERALL"}
       />
-      <AddCommentForm
-        allComments={allComments}
-        setAllComments={setAllComments}
-        loggedInSoldier={loggedInSoldier}
-      />
+      {loggedInSoldier.id !== id && (
+        <AddCommentForm
+          allComments={allComments}
+          setAllComments={setAllComments}
+          loggedInSoldier={loggedInSoldier}
+        />
+      )}
     </div>
   );
 };
