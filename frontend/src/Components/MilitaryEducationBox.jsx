@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import apiCalls from "../apiCalls/apiCalls";
 
 const MilitaryEducationBox = ({
@@ -7,6 +7,7 @@ const MilitaryEducationBox = ({
   editSection,
   setEditSection,
   setCurrentSoldier,
+  loggedInSoldier,
 }) => {
   const [dlc1Complete, setDlc1Complete] = useState(
     currentSoldier.dlc_1_complete
@@ -26,6 +27,7 @@ const MilitaryEducationBox = ({
   const [driversLicense, setDriversLicense] = useState(
     currentSoldier.drivers_license
   );
+  const [loggedInSoldierCanEdit, setLoggedInSoldierCanEdit] = useState(false);
 
   const handleEducationFormSubmit = (e) => {
     e.preventDefault();
@@ -54,11 +56,17 @@ const MilitaryEducationBox = ({
       });
   };
 
+  useEffect(() => {
+    if (loggedInSoldier.id === currentSoldier.id || loggedInSoldier.is_leader) {
+      setLoggedInSoldierCanEdit(true);
+    }
+  }, [currentSoldier]);
+
   return (
     <div className="info-box-container">
       <div className="info-box-title with-edit-button">
         <div className="info-box-title-text">Military Education</div>
-        {editSection !== "Military Education" && (
+        {loggedInSoldierCanEdit && editSection !== "Military Education" && (
           <button
             onClick={() => handleChangeEditSection("Military Education")}
             className="title-box-button"
