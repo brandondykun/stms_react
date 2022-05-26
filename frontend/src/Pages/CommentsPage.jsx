@@ -4,7 +4,7 @@ import AddCommentForm from "../Components/AddCommentForm";
 import apiCalls from "../apiCalls/apiCalls";
 import CommentCategoryContainer from "../Components/CommentCategoryContainer";
 
-const CommentsPage = () => {
+const CommentsPage = ({ userId }) => {
   const [allComments, setAllComments] = useState(null);
   const { id } = useParams();
 
@@ -53,6 +53,7 @@ const CommentsPage = () => {
       <AddCommentForm
         allComments={allComments}
         setAllComments={setAllComments}
+        userId={userId}
       />
     </div>
   );
