@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import apiCalls from "../apiCalls/apiCalls";
 
-const AddCommentForm = ({ allComments, setAllComments, userId }) => {
+const AddCommentForm = ({ allComments, setAllComments, loggedInSoldier }) => {
   const [category, setCategory] = useState("");
   const [commentText, setCommentText] = useState("");
   const { id } = useParams();
@@ -12,7 +12,7 @@ const AddCommentForm = ({ allComments, setAllComments, userId }) => {
 
     const data = {
       soldier: id,
-      commentor: userId.id,
+      commentor: loggedInSoldier.id,
       category: category,
       comment_text: commentText,
     };

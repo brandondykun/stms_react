@@ -1,9 +1,12 @@
 import SoldierDetails from "../Components/SoldierDetails";
 
-const MyInfoPage = ({ user, setUser }) => {
+const MyInfoPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
   return (
     <div className="primary-content">
-      <SoldierDetails currentSoldier={user} setCurrentSoldier={setUser} />
+      <SoldierDetails
+        currentSoldier={loggedInSoldier}
+        setCurrentSoldier={setLoggedInSoldier}
+      />
     </div>
   );
 };

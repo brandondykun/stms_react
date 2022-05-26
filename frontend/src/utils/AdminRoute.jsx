@@ -1,6 +1,11 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-const AdminRoute = ({ user, redirectPath = "/home", children, isLoading }) => {
+const AdminRoute = ({
+  loggedInSoldier,
+  redirectPath = "/home",
+  children,
+  isLoading,
+}) => {
   if (isLoading) {
     return (
       <div className="primary-content">
@@ -8,7 +13,7 @@ const AdminRoute = ({ user, redirectPath = "/home", children, isLoading }) => {
       </div>
     );
   }
-  if (!user.is_leader) {
+  if (!loggedInSoldier.is_leader) {
     return <Navigate to={redirectPath} replace />;
   }
 

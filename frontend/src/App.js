@@ -18,7 +18,7 @@ import apiCalls from "./apiCalls/apiCalls";
 
 function App() {
   const [userId, setUserId] = useState();
-  const [user, setUser] = useState(null);
+  const [loggedInSoldier, setLoggedInSoldier] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function App() {
 
           const soldier = await apiCalls.getSoldierById(soldier_id);
           if (soldier.status === 200) {
-            setUser(soldier.data);
+            setLoggedInSoldier(soldier.data);
           }
         }
       }
@@ -47,16 +47,21 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar
-          setUser={setUser}
+          setLoggedInSoldier={setLoggedInSoldier}
           setUserId={setUserId}
           userId={userId}
-          user={user}
+          loggedInSoldier={loggedInSoldier}
         />
         <Routes>
           <Route path="/register" element={<RegisterPage />} />
           <Route
             path="/login"
-            element={<LoginPage setUserId={setUserId} setUser={setUser} />}
+            element={
+              <LoginPage
+                setUserId={setUserId}
+                setLoggedInSoldier={setLoggedInSoldier}
+              />
+            }
           />
           <Route
             element={<ProtectedRoute userId={userId} isLoading={isLoading} />}
@@ -64,17 +69,29 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route
               path="/my-info"
-              element={<MyInfoPage user={user} setUser={setUser} />}
+              element={
+                <MyInfoPage
+                  loggedInSoldier={loggedInSoldier}
+                  setLoggedInSoldier={setLoggedInSoldier}
+                />
+              }
             />
 
             <Route path="/soldier-info/:id" element={<SoldierInfoPage />} />
             <Route
               path="/soldier-info/:id/comments"
-              element={<CommentsPage userId={userId} />}
+              element={<CommentsPage loggedInSoldier={loggedInSoldier} />}
             />
             <Route path="/create-account/:id" element={<CreateAccountPage />} />
           </Route>
-          <Route element={<AdminRoute user={user} isLoading={isLoading} />}>
+          <Route
+            element={
+              <AdminRoute
+                loggedInSoldier={loggedInSoldier}
+                isLoading={isLoading}
+              />
+            }
+          >
             <Route path="/admin" element={<AdminPage />} />
           </Route>
         </Routes>

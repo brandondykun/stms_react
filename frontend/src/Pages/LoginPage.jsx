@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
-const LoginPage = ({ setUserId, setUser }) => {
+const LoginPage = ({ setUserId, setLoggedInSoldier }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(null);
@@ -28,7 +28,7 @@ const LoginPage = ({ setUserId, setUser }) => {
 
           const soldier = await apiCalls.getSoldierById(soldier_id);
           if (soldier.status === 200) {
-            setUser(soldier.data);
+            setLoggedInSoldier(soldier.data);
             navigate("/home");
           }
         }
