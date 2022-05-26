@@ -6,12 +6,17 @@ import SoldierDetails from "../Components/SoldierDetails";
 
 const SoldierInfoPage = ({ loggedInSoldier }) => {
   const [currentSoldier, setCurrentSoldier] = useState();
+  const [loggedInSoldierCanViewComments, setLoggedInSoldierCanViewComments] =
+    useState(false);
   const { id } = useParams();
 
   useEffect(() => {
     apiCalls.getSoldierById(id).then((res) => {
       if (res.status === 200) {
         setCurrentSoldier(res.data);
+        if (loggedInSoldier.is_leader || res.data.id === loggedInSoldier.id) {
+          setLoggedInSoldierCanViewComments(true);
+        }
       }
     });
   }, [id]);
@@ -26,7 +31,9 @@ const SoldierInfoPage = ({ loggedInSoldier }) => {
           loggedInSoldier={loggedInSoldier}
         />
       )}
-      <Link to={`/soldier-info/${id}/comments`}>View Comments</Link>
+      {currentSoldier && loggedInSoldierCanViewComments && (
+        <Link to={`/soldier-info/${id}/comments`}>View Comments</Link>
+      )}
     </div>
   );
 };
