@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import apiCalls from "../apiCalls/apiCalls";
 
-const AddCommentForm = ({ allComments, setAllComments }) => {
+const AddCommentForm = ({ allComments, setAllComments, userId }) => {
   const [category, setCategory] = useState("");
   const [commentText, setCommentText] = useState("");
   const { id } = useParams();
@@ -12,7 +12,7 @@ const AddCommentForm = ({ allComments, setAllComments }) => {
 
     const data = {
       soldier: id,
-      commentor: 3, // need to add the current user id to this
+      commentor: userId.id,
       category: category,
       comment_text: commentText,
     };
@@ -24,20 +24,19 @@ const AddCommentForm = ({ allComments, setAllComments }) => {
         if (res.status === 201) {
           setAllComments([...allComments, res.data]);
         }
+        setCategory("");
+        setCommentText("");
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
   return (
     <form
       className="flex-column-form add-comment-form"
       onSubmit={handleAddCommentFormSubmit}
     >
-      {/* <label htmlFor="soldier"></label>
-        <input type="number" name="soldier" />
-        <label htmlFor="commentor"></label>
-        <input type="number" name="commentor" /> */}
       <label htmlFor="category">Category</label>
       <select
         name="category"
