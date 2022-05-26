@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import apiCalls from "../apiCalls/apiCalls";
 import SoldierDetails from "../Components/SoldierDetails";
 
-const SoldierInfoPage = () => {
+const SoldierInfoPage = ({ loggedInSoldier }) => {
   const [currentSoldier, setCurrentSoldier] = useState();
   const { id } = useParams();
 
@@ -23,6 +23,7 @@ const SoldierInfoPage = () => {
         <SoldierDetails
           currentSoldier={currentSoldier}
           setCurrentSoldier={setCurrentSoldier}
+          loggedInSoldier={loggedInSoldier}
         />
       )}
       <Link to={`/soldier-info/${id}/comments`}>View Comments</Link>
