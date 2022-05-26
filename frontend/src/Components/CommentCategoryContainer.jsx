@@ -16,7 +16,7 @@ const CommentCategoryContainer = ({ allComments, category }) => {
   return (
     <div className="comments-container">
       <div className="comments-container-title">{category}</div>
-      <div className="soldier-details-info-container">
+      <div className="comments-content-container">
         {commentsFilteredByCategory &&
           commentsFilteredByCategory.map((comment) => {
             return <div key={comment.id}>-{comment.comment_text}</div>;
