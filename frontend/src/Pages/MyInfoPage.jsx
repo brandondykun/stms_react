@@ -6,6 +6,7 @@ const MyInfoPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
       <SoldierDetails
         currentSoldier={loggedInSoldier}
         setCurrentSoldier={setLoggedInSoldier}
+        loggedInSoldier={loggedInSoldier}
       />
     </div>
   );
