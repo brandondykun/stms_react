@@ -55,9 +55,6 @@ const RankAndDatesInfoBox = ({
     <div className="info-box-container">
       <div className="info-box-title with-edit-button">
         <div className="info-box-title-text">Rank/Dates</div>
-        {console.log("CURRENT SOLDIER: ", currentSoldier)}
-        {console.log("LOGGED IN SOLDIER: ", loggedInSoldier)}
-
         {loggedInSoldierCanEdit && editSection !== "Rank/Dates" && (
           <button
             onClick={() => handleChangeEditSection("Rank/Dates")}
