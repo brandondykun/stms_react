@@ -4,7 +4,11 @@ import RankAndDatesInfoBox from "./RankAndDatesInfoBox";
 import ScoresInfoBox from "./ScoresInfoBox";
 import MilitaryEducationBox from "./MilitaryEducationBox";
 
-const SoldierDetails = ({ currentSoldier, setCurrentSoldier }) => {
+const SoldierDetails = ({
+  currentSoldier,
+  setCurrentSoldier,
+  loggedInSoldier,
+}) => {
   const [editSection, setEditSection] = useState(null);
 
   const handleChangeEditSection = (section) => {
@@ -37,6 +41,7 @@ const SoldierDetails = ({ currentSoldier, setCurrentSoldier }) => {
         editSection={editSection}
         setEditSection={setEditSection}
         handleChangeEditSection={handleChangeEditSection}
+        loggedInSoldier={loggedInSoldier}
       />
 
       <ScoresInfoBox
@@ -45,6 +50,7 @@ const SoldierDetails = ({ currentSoldier, setCurrentSoldier }) => {
         editSection={editSection}
         setEditSection={setEditSection}
         handleChangeEditSection={handleChangeEditSection}
+        loggedInSoldier={loggedInSoldier}
       />
 
       <MilitaryEducationBox
@@ -53,6 +59,7 @@ const SoldierDetails = ({ currentSoldier, setCurrentSoldier }) => {
         editSection={editSection}
         setEditSection={setEditSection}
         handleChangeEditSection={handleChangeEditSection}
+        loggedInSoldier={loggedInSoldier}
       />
     </div>
   );
