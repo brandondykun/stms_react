@@ -77,7 +77,10 @@ function App() {
               }
             />
 
-            <Route path="/soldier-info/:id" element={<SoldierInfoPage />} />
+            <Route
+              path="/soldier-info/:id"
+              element={<SoldierInfoPage loggedInSoldier={loggedInSoldier} />}
+            />
             <Route
               path="/soldier-info/:id/comments"
               element={<CommentsPage loggedInSoldier={loggedInSoldier} />}
