@@ -116,6 +116,7 @@
 
 .edit-form-input-container {
   padding: .2rem;
+  text-align: left;
 }
 
 .edit-form-input-container > label {
