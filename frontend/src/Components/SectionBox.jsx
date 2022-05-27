@@ -24,13 +24,12 @@ const SectionBox = ({ section, soldiers }) => {
                 key={soldier.id}
                 className="soldier-role-name-container-homepage"
               >
-                <div>{soldier.role}</div>
                 <Link
                   to={`/soldier-info/${soldier.id}`}
                   style={{ display: "inline-block" }}
                   className="name-link"
                 >
-                  {soldier.rank} {soldier.last_name}
+                  {soldier.role} {soldier.rank} {soldier.last_name}
                 </Link>
               </div>
             );
