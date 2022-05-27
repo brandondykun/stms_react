@@ -44,14 +44,14 @@ const AdminBoxSoldierContainer = ({
         {soldier.rank} {soldier.last_name}
       </div>
       {!soldierToReassign || soldierToReassign.id !== soldier.id ? (
-        <>
+        <div className="info-box-content-container">
           <div className="admin-info-indented">Role: {soldier.role}</div>
           <div className="admin-info-indented">Section: {soldier.section}</div>
           <div className="admin-info-indented">Team: {soldier.team}</div>
           <button onClick={() => setSoldierToReassign(soldier)}>
             Reassign
           </button>{" "}
-        </>
+        </div>
       ) : (
         <div className="info-box-content-container">
           <form onSubmit={handleFormSubmit}>
