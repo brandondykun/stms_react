@@ -7,6 +7,8 @@ const AdminSectionBox = ({
   soldierToReassign,
   setSoldierToReassign,
   setAllSoldiers,
+  loggedInSoldier,
+  setLoggedInSoldier,
 }) => {
   const [filteredSoldiers, setFilteredSoldiers] = useState();
 
@@ -32,6 +34,8 @@ const AdminSectionBox = ({
                 setSoldierToReassign={setSoldierToReassign}
                 allSoldiers={allSoldiers}
                 setAllSoldiers={setAllSoldiers}
+                loggedInSoldier={loggedInSoldier}
+                setLoggedInSoldier={setLoggedInSoldier}
               />
             );
           })}
