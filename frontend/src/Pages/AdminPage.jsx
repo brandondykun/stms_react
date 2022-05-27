@@ -19,7 +19,7 @@ const AdminPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
 
   return (
     <div className="primary-content">
-      <h2>Admin Page</h2>
+      <h1>Admin Page</h1>
       <AdminSectionBox
         section="BN STAFF"
         allSoldiers={allSoldiers}
