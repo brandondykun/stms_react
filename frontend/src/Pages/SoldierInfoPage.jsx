@@ -23,10 +23,12 @@ const SoldierInfoPage = ({ loggedInSoldier }) => {
 
   return (
     <div className="primary-content">
-      <h1>
-        {currentSoldier.rank} {currentSoldier.first_name}{" "}
-        {currentSoldier.last_name}
-      </h1>
+      {currentSoldier && (
+        <h1>
+          {currentSoldier.rank} {currentSoldier.first_name}{" "}
+          {currentSoldier.last_name}
+        </h1>
+      )}
       {currentSoldier && (
         <SoldierDetails
           currentSoldier={currentSoldier}
