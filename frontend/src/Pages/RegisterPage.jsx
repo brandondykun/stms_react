@@ -53,31 +53,35 @@ const RegisterPage = () => {
 
   return (
     <div className="primary-content">
-      <form className="flex-column-form" onSubmit={handleRegisterFormSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+      <div className="login-register-form-container">
+        <form className="flex-column-form" onSubmit={handleRegisterFormSubmit}>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label htmlFor="confirm-password">Confirm Password</label>
-        <input
-          type="password"
-          name="confirm-password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <button type="submit">Register</button>
-      </form>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label htmlFor="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            name="confirm-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <button className="login-register-button" type="submit">
+            Register
+          </button>
+        </form>
+      </div>
       {errors && <div className="error-text-container">{errors}</div>}
     </div>
   );

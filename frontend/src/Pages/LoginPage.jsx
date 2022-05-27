@@ -40,27 +40,31 @@ const LoginPage = ({ setUserId, setLoggedInSoldier }) => {
 
   return (
     <div className="primary-content">
-      <form className="flex-column-form" onSubmit={handleLoginFormSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          name="username"
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          // placeholder="Username"
-          aria-label="Username"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          // placeholder="Password"
-          aria-label="Password"
-        />
-        <button type="submit">Log in</button>
-      </form>
+      <div className="login-register-form-container">
+        <form className="flex-column-form" onSubmit={handleLoginFormSubmit}>
+          <label htmlFor="username">Username</label>
+          <input
+            name="username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            // placeholder="Username"
+            aria-label="Username"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            // placeholder="Password"
+            aria-label="Password"
+          />
+          <button className="login-register-button" type="submit">
+            Log in
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
