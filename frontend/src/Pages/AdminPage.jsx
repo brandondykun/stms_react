@@ -4,6 +4,7 @@ import AdminSectionBox from "../Components/AdminSectionBox";
 
 const AdminPage = () => {
   const [allSoldiers, setAllSoldiers] = useState();
+  const [soldierToReassign, setSoldierToReassign] = useState(null);
 
   useEffect(() => {
     apiCalls
@@ -18,12 +19,42 @@ const AdminPage = () => {
 
   return (
     <div className="primary-content">
-      <div>This is the Admin Page</div>
-      <AdminSectionBox section="BN STAFF" soldiers={allSoldiers} />
-      <AdminSectionBox section="ALPHA" soldiers={allSoldiers} />
-      <AdminSectionBox section="BRAVO" soldiers={allSoldiers} />
-      <AdminSectionBox section="CHARLIE" soldiers={allSoldiers} />
-      <AdminSectionBox section="UNASSIGNED" soldiers={allSoldiers} />
+      <h2>Admin Page</h2>
+      <AdminSectionBox
+        section="BN STAFF"
+        allSoldiers={allSoldiers}
+        setAllSoldiers={setAllSoldiers}
+        soldierToReassign={soldierToReassign}
+        setSoldierToReassign={setSoldierToReassign}
+      />
+      <AdminSectionBox
+        section="ALPHA"
+        allSoldiers={allSoldiers}
+        setAllSoldiers={setAllSoldiers}
+        soldierToReassign={soldierToReassign}
+        setSoldierToReassign={setSoldierToReassign}
+      />
+      <AdminSectionBox
+        section="BRAVO"
+        allSoldiers={allSoldiers}
+        setAllSoldiers={setAllSoldiers}
+        soldierToReassign={soldierToReassign}
+        setSoldierToReassign={setSoldierToReassign}
+      />
+      <AdminSectionBox
+        section="CHARLIE"
+        allSoldiers={allSoldiers}
+        setAllSoldiers={setAllSoldiers}
+        soldierToReassign={soldierToReassign}
+        setSoldierToReassign={setSoldierToReassign}
+      />
+      <AdminSectionBox
+        section="UNASSIGNED"
+        allSoldiers={allSoldiers}
+        setAllSoldiers={setAllSoldiers}
+        soldierToReassign={soldierToReassign}
+        setSoldierToReassign={setSoldierToReassign}
+      />
     </div>
   );
 };

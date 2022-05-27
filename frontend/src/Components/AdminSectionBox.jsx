@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import AdminBoxSoldierContainer from "./AdminBoxSoldierContainer";
 
-const AdminSectionBox = ({ section, soldiers }) => {
+const AdminSectionBox = ({
+  section,
+  allSoldiers,
+  soldierToReassign,
+  setSoldierToReassign,
+  setAllSoldiers,
+}) => {
   const [filteredSoldiers, setFilteredSoldiers] = useState();
 
   useEffect(() => {
-    const filteredBySection = soldiers
-      ? soldiers.filter((soldier) => {
+    const filteredBySection = allSoldiers
+      ? allSoldiers.filter((soldier) => {
           return soldier.section === section;
         })
       : null;
     setFilteredSoldiers(filteredBySection);
-  }, [soldiers]);
+  }, [allSoldiers]);
+
   return (
     <div className="info-box-container">
       <div className="info-box-title">{section}</div>
@@ -19,14 +26,13 @@ const AdminSectionBox = ({ section, soldiers }) => {
         {filteredSoldiers &&
           filteredSoldiers.map((soldier) => {
             return (
-              <div key={soldier.id} className="soldier-role-name-container">
-                <div>
-                  {soldier.rank} {soldier.last_name}
-                </div>
-                <div>{soldier.role}</div>
-                <div>{soldier.section}</div>
-                <div>{soldier.team}</div>
-              </div>
+              <AdminBoxSoldierContainer
+                soldier={soldier}
+                soldierToReassign={soldierToReassign}
+                setSoldierToReassign={setSoldierToReassign}
+                allSoldiers={allSoldiers}
+                setAllSoldiers={setAllSoldiers}
+              />
             );
           })}
       </div>
