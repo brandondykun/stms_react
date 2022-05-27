@@ -3,6 +3,8 @@ import apiCalls from "../apiCalls/apiCalls";
 import RankAndDatesInfoBox from "./RankAndDatesInfoBox";
 import ScoresInfoBox from "./ScoresInfoBox";
 import MilitaryEducationBox from "./MilitaryEducationBox";
+import AssignmentInfoBox from "./AssignmentInfoBox";
+import NameInfoBox from "./NameInfoBox";
 
 const SoldierDetails = ({
   currentSoldier,
@@ -18,22 +20,16 @@ const SoldierDetails = ({
 
   return (
     <div>
-      <h2>
-        {currentSoldier.rank} {currentSoldier.first_name}{" "}
-        {currentSoldier.middle_name} {currentSoldier.last_name}
-      </h2>
+      <NameInfoBox
+        currentSoldier={currentSoldier}
+        setCurrentSoldier={setCurrentSoldier}
+        editSection={editSection}
+        setEditSection={setEditSection}
+        handleChangeEditSection={handleChangeEditSection}
+        loggedInSoldier={loggedInSoldier}
+      />
 
-      <div className="info-box-container">
-        <div className="info-box-title with-edit-button">
-          <div className="info-box-title-text">Assignment</div>
-        </div>
-
-        <div className="info-box-content-container">
-          <div>Section: {currentSoldier.section}</div>
-          <div>Team: {currentSoldier.team}</div>
-          <div>Role: {currentSoldier.role}</div>
-        </div>
-      </div>
+      <AssignmentInfoBox currentSoldier={currentSoldier} />
 
       <RankAndDatesInfoBox
         currentSoldier={currentSoldier}
