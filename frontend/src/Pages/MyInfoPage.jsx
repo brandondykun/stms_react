@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SoldierDetails from "../Components/SoldierDetails";
 
 const MyInfoPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
+  const linkText = "View My Performance Comments >>";
+
   return (
     <div className="primary-content">
       <h1>My Info</h1>
@@ -9,7 +11,7 @@ const MyInfoPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
         className="text-link"
         to={`/soldier-info/${loggedInSoldier.id}/comments`}
       >
-        View My Performance Comments >>
+        {linkText}
       </Link>
       <SoldierDetails
         currentSoldier={loggedInSoldier}
