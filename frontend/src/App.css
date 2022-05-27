@@ -85,6 +85,12 @@
   padding: 1rem 0;
 }
 
+.soldier-role-name-container-homepage {
+  display: flex;
+  font-size: 1.1rem;
+}
+
+
 .soldier-role-name-container:last-child {
   border-bottom: none;
 }
