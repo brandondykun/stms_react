@@ -19,7 +19,7 @@ const SoldierDetails = ({
   };
 
   return (
-    <div>
+    <div className="soldier-details-container">
       <NameInfoBox
         currentSoldier={currentSoldier}
         setCurrentSoldier={setCurrentSoldier}
