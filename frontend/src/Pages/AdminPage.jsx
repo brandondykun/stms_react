@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import apiCalls from "../apiCalls/apiCalls";
 import AdminSectionBox from "../Components/AdminSectionBox";
 
-const AdminPage = () => {
+const AdminPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
   const [allSoldiers, setAllSoldiers] = useState();
   const [soldierToReassign, setSoldierToReassign] = useState(null);
 
@@ -26,6 +26,8 @@ const AdminPage = () => {
         setAllSoldiers={setAllSoldiers}
         soldierToReassign={soldierToReassign}
         setSoldierToReassign={setSoldierToReassign}
+        loggedInSoldier={loggedInSoldier}
+        setLoggedInSoldier={setLoggedInSoldier}
       />
       <AdminSectionBox
         section="ALPHA"
@@ -33,6 +35,8 @@ const AdminPage = () => {
         setAllSoldiers={setAllSoldiers}
         soldierToReassign={soldierToReassign}
         setSoldierToReassign={setSoldierToReassign}
+        loggedInSoldier={loggedInSoldier}
+        setLoggedInSoldier={setLoggedInSoldier}
       />
       <AdminSectionBox
         section="BRAVO"
@@ -40,6 +44,8 @@ const AdminPage = () => {
         setAllSoldiers={setAllSoldiers}
         soldierToReassign={soldierToReassign}
         setSoldierToReassign={setSoldierToReassign}
+        loggedInSoldier={loggedInSoldier}
+        setLoggedInSoldier={setLoggedInSoldier}
       />
       <AdminSectionBox
         section="CHARLIE"
@@ -47,6 +53,8 @@ const AdminPage = () => {
         setAllSoldiers={setAllSoldiers}
         soldierToReassign={soldierToReassign}
         setSoldierToReassign={setSoldierToReassign}
+        loggedInSoldier={loggedInSoldier}
+        setLoggedInSoldier={setLoggedInSoldier}
       />
       <AdminSectionBox
         section="UNASSIGNED"
@@ -54,6 +62,8 @@ const AdminPage = () => {
         setAllSoldiers={setAllSoldiers}
         soldierToReassign={soldierToReassign}
         setSoldierToReassign={setSoldierToReassign}
+        loggedInSoldier={loggedInSoldier}
+        setLoggedInSoldier={setLoggedInSoldier}
       />
     </div>
   );
