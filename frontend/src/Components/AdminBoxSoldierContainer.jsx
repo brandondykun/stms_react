@@ -43,23 +43,49 @@ const AdminBoxSoldierContainer = ({
     setSoldierToReassign(null);
   };
 
+  const notEditingSoldier = () => {
+    if (soldierToReassign) {
+      return soldierToReassign.id !== soldier.id;
+    }
+    return false;
+  };
+
   return (
     <div key={soldier.id} className="soldier-role-name-container">
-      <div>
-        {soldier.rank} {soldier.last_name}
+      <div className="soldier-name-button-container">
+        <div>
+          {soldier.rank} {soldier.last_name}
+        </div>
+        {soldierToReassign === null && notEditingSoldier && (
+          <button
+            className="reassign-button"
+            onClick={() => setSoldierToReassign(soldier)}
+          >
+            Reassign
+          </button>
+        )}
+        {soldierToReassign && soldierToReassign.id === soldier.id && (
+          <button
+            className="reassign-button"
+            type="submit"
+            form="reassign-form"
+          >
+            Submit
+          </button>
+        )}
       </div>
       {!soldierToReassign || soldierToReassign.id !== soldier.id ? (
-        <div className="info-box-content-container">
+        <div className="info-box-content">
           <div className="admin-info-indented">Role: {soldier.role}</div>
           <div className="admin-info-indented">Section: {soldier.section}</div>
           <div className="admin-info-indented">Team: {soldier.team}</div>
-          <button onClick={() => setSoldierToReassign(soldier)}>
+          {/* <button onClick={() => setSoldierToReassign(soldier)}>
             Reassign
-          </button>{" "}
+          </button>{" "} */}
         </div>
       ) : (
-        <div className="info-box-content-container">
-          <form onSubmit={handleFormSubmit}>
+        <div className="info-box-content">
+          <form id="reassign-form" onSubmit={handleFormSubmit}>
             <div className="edit-form-input-container">
               <label for="role">Role:</label>
               <select
@@ -113,7 +139,7 @@ const AdminBoxSoldierContainer = ({
                 <option value="UNASSIGNED">UNASSIGNED</option>
               </select>
             </div>
-            <button type="submit">Submit</button>
+            {/* <button type="submit">Submit</button> */}
           </form>
         </div>
       )}
