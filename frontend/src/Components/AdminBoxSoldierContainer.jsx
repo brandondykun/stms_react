@@ -8,6 +8,8 @@ const AdminBoxSoldierContainer = ({
   setSoldierToReassign,
   allSoldiers,
   setAllSoldiers,
+  loggedInSoldier,
+  setLoggedInSoldier,
 }) => {
   const [role, setRole] = useState(soldier.role);
   const [section, setSection] = useState(soldier.section);
@@ -30,6 +32,9 @@ const AdminBoxSoldierContainer = ({
             return s.id != soldier.id;
           });
           setAllSoldiers([...soldiers, res.data]);
+          if (soldier.id === loggedInSoldier.id) {
+            setLoggedInSoldier(res.data);
+          }
         }
       })
       .catch((err) => {
