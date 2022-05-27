@@ -282,7 +282,7 @@ const CreateAccountForm = () => {
       />
       <label htmlFor="drivers_license">Military Drivers Liscense</label>
 
-      <button type="subimt">Submit</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
