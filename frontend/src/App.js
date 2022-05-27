@@ -95,7 +95,15 @@ function App() {
               />
             }
           >
-            <Route path="/admin" element={<AdminPage />} />
+            <Route
+              path="/admin"
+              element={
+                <AdminPage
+                  loggedInSoldier={loggedInSoldier}
+                  setLoggedInSoldier={setLoggedInSoldier}
+                />
+              }
+            />
           </Route>
         </Routes>
         <Footer />
