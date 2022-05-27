@@ -50,7 +50,7 @@ const CommentsPage = ({ loggedInSoldier }) => {
         allComments={allComments}
         category={"OVERALL"}
       />
-      {loggedInSoldier.id !== id && (
+      {loggedInSoldier.id !== parseInt(id) && (
         <AddCommentForm
           allComments={allComments}
           setAllComments={setAllComments}
