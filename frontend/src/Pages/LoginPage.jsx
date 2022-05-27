@@ -41,6 +41,7 @@ const LoginPage = ({ setUserId, setLoggedInSoldier }) => {
   return (
     <div className="primary-content">
       <div className="login-register-form-container">
+        <h1 className="login-register-title">Log In</h1>
         <form className="flex-column-form" onSubmit={handleLoginFormSubmit}>
           <label htmlFor="username">Username</label>
           <input
