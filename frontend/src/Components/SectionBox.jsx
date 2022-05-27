@@ -14,7 +14,7 @@ const SectionBox = ({ section, soldiers }) => {
   }, [soldiers]);
 
   return (
-    <div className="info-box-container">
+    <div className="info-box-container homepage-info-box">
       <div className="info-box-title">{section}</div>
       <div className="info-box-content-container">
         {filteredSoldiers &&
