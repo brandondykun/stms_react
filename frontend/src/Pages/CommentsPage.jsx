@@ -6,6 +6,7 @@ import CommentCategoryContainer from "../Components/CommentCategoryContainer";
 
 const CommentsPage = ({ loggedInSoldier }) => {
   const [allComments, setAllComments] = useState(null);
+  const [soldier, setSoldier] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -20,11 +21,25 @@ const CommentsPage = ({ loggedInSoldier }) => {
       .catch((err) => {
         console.log(err);
       });
+    apiCalls
+      .getSoldierById(id)
+      .then((res) => {
+        if (res.status === 200) {
+          setSoldier(res.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [id]);
 
   return (
     <div className="primary-content">
-      <div>Comments Page for {id}</div>
+      {soldier && (
+        <h1>
+          Comments for {soldier.rank} {soldier.first_name} {soldier.last_name}
+        </h1>
+      )}
       <CommentCategoryContainer
         allComments={allComments}
         category={"CHARACTER"}
