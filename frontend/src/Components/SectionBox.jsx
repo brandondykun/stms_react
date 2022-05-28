@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const SectionBox = ({ section, soldiers }) => {
-  const [filteredSoldiers, setFilteredSoldiers] = useState();
+  const [filteredSoldiers, setFilteredSoldiers] = useState(null);
 
   useEffect(() => {
     const filteredBySection = soldiers
@@ -10,7 +10,12 @@ const SectionBox = ({ section, soldiers }) => {
           return soldier.section === section;
         })
       : null;
-    setFilteredSoldiers(filteredBySection);
+    if (filteredBySection) {
+      const sorted = filteredBySection.sort((a, b) =>
+        a.unit_position > b.unit_position ? 1 : -1
+      );
+      setFilteredSoldiers(sorted);
+    }
   }, [soldiers]);
 
   return (
