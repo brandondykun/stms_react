@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
+from stms_app.utils import assign_unit_position
 
 
 # Create your models here.
@@ -87,6 +88,7 @@ class Soldier(models.Model):
     jfo_qualified = models.BooleanField(default=False, blank=True)
     drivers_license = models.BooleanField(default=False, blank=True)
     is_leader = models.BooleanField(default=False, blank=True)
+    unit_position = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -94,6 +96,7 @@ class Soldier(models.Model):
     def save(self, *args, **kwargs):
         if self.role == "BN FSO" or self.role == "BN FSNCO" or self.role == "CO FSO" or self.role == "CO FSNCO":
             self.is_leader = True
+        self.unit_position = assign_unit_position(self.section, self.team, self.role)
         super(Soldier, self).save(*args, **kwargs)
 
 
