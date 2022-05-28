@@ -36,7 +36,7 @@ const CommentsPage = ({ loggedInSoldier }) => {
   return (
     <div className="primary-content">
       {soldier && (
-        <h1>
+        <h1 className="page-title">
           Comments for {soldier.rank} {soldier.first_name} {soldier.last_name}
         </h1>
       )}

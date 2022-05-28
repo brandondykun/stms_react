@@ -19,7 +19,7 @@ const HomePage = () => {
 
   return (
     <div className="primary-content">
-      <h1>Homepage</h1>
+      <h1 className="page-title">Homepage</h1>
       <SectionBox soldiers={allSoldiers} section="BN STAFF" />
       <div className="responsive-flex-row">
         <SectionBox soldiers={allSoldiers} section="ALPHA" />

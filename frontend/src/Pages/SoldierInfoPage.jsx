@@ -24,10 +24,17 @@ const SoldierInfoPage = ({ loggedInSoldier }) => {
   return (
     <div className="primary-content">
       {currentSoldier && (
-        <h1>
+        <h1 className="page-title">
           {currentSoldier.rank} {currentSoldier.first_name}{" "}
           {currentSoldier.last_name}
         </h1>
+      )}
+      {currentSoldier && loggedInSoldierCanViewComments && (
+        <Link className="text-link" to={`/soldier-info/${id}/comments`}>
+          {loggedInSoldier.id === parseInt(id)
+            ? "View My Performance Comments >>"
+            : "View Performance Comments >>"}
+        </Link>
       )}
       {currentSoldier && (
         <SoldierDetails
@@ -36,9 +43,9 @@ const SoldierInfoPage = ({ loggedInSoldier }) => {
           loggedInSoldier={loggedInSoldier}
         />
       )}
-      {currentSoldier && loggedInSoldierCanViewComments && (
+      {/* {currentSoldier && loggedInSoldierCanViewComments && (
         <Link to={`/soldier-info/${id}/comments`}>View Comments</Link>
-      )}
+      )} */}
     </div>
   );
 };
