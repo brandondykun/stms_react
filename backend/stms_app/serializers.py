@@ -20,7 +20,7 @@ class SoldierSerializer(serializers.ModelSerializer):
     # user= UserSerializer(read_only=True)
     class Meta:
         model = Soldier
-        fields = ["id", "user", "first_name", "middle_name", "last_name", "rank", "grade", "pebd", "date_of_rank", "expiration_term_of_service", "section", "team", "role", "acft_score", "m4_qual", "dlc_1_complete", "blc_complete", "dlc_2_complete", "alc_complete", "dlc_3_complete", "slc_complete", "jfo_qualified", "drivers_license", "is_leader"]
+        fields = ["id", "user", "first_name", "middle_name", "last_name", "rank", "grade", "pebd", "date_of_rank", "expiration_term_of_service", "section", "team", "role", "acft_score", "m4_qual", "dlc_1_complete", "blc_complete", "dlc_2_complete", "alc_complete", "dlc_3_complete", "slc_complete", "jfo_qualified", "drivers_license", "is_leader", "unit_position"]
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
