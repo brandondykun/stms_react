@@ -79,69 +79,63 @@ const AdminBoxSoldierContainer = ({
           <div className="admin-info-indented">Role: {soldier.role}</div>
           <div className="admin-info-indented">Section: {soldier.section}</div>
           <div className="admin-info-indented">Team: {soldier.team}</div>
-          {/* <button onClick={() => setSoldierToReassign(soldier)}>
-            Reassign
-          </button>{" "} */}
         </div>
       ) : (
-        <div className="info-box-content">
-          <form id="reassign-form" onSubmit={handleFormSubmit}>
-            <div className="edit-form-input-container">
-              <label for="role">Role:</label>
-              <select
-                name="role"
-                id="role"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-              >
-                <option value="BN FSO">BN FSO</option>
-                <option value="BN FSNCO">BN FSNCO</option>
-                <option value="AFATDS">AFATDS</option>
-                <option value="BN FO">BN FO</option>
-                <option value="BN RTO">BN RTO</option>
-                <option value="CO FSO">CO FSO</option>
-                <option value="CO FSNCO">CO FSNCO</option>
-                <option value="FO">FO</option>
-                <option value="RTO">RTO</option>
-                <option value="UNASSIGNED">UNASSIGNED</option>
-              </select>
-            </div>
+        <form id="reassign-form" onSubmit={handleFormSubmit}>
+          <div className="edit-form-input-container">
+            <label for="role">Role:</label>
+            <select
+              name="role"
+              id="role"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+            >
+              <option value="BN FSO">BN FSO</option>
+              <option value="BN FSNCO">BN FSNCO</option>
+              <option value="AFATDS">AFATDS</option>
+              <option value="BN FO">BN FO</option>
+              <option value="BN RTO">BN RTO</option>
+              <option value="CO FSO">CO FSO</option>
+              <option value="CO FSNCO">CO FSNCO</option>
+              <option value="FO">FO</option>
+              <option value="RTO">RTO</option>
+              <option value="UNASSIGNED">UNASSIGNED</option>
+            </select>
+          </div>
 
-            <div className="edit-form-input-container">
-              <label for="section">Section:</label>
-              <select
-                name="section"
-                id="section"
-                value={section}
-                onChange={(e) => setSection(e.target.value)}
-              >
-                <option value="BN STAFF">BN STAFF</option>
-                <option value="ALPHA">ALPHA</option>
-                <option value="BRAVO">BRAVO</option>
-                <option value="CHARLIE">CHARLIE</option>
-                <option value="DELTA">DELTA</option>
-                <option value="UNASSIGNED">UNASSIGNED</option>
-              </select>
-            </div>
+          <div className="edit-form-input-container">
+            <label for="section">Section:</label>
+            <select
+              name="section"
+              id="section"
+              value={section}
+              onChange={(e) => setSection(e.target.value)}
+            >
+              <option value="BN STAFF">BN STAFF</option>
+              <option value="ALPHA">ALPHA</option>
+              <option value="BRAVO">BRAVO</option>
+              <option value="CHARLIE">CHARLIE</option>
+              <option value="DELTA">DELTA</option>
+              <option value="UNASSIGNED">UNASSIGNED</option>
+            </select>
+          </div>
 
-            <div className="edit-form-input-container">
-              <label for="team">Team:</label>
-              <select
-                name="team"
-                id="team"
-                value={team}
-                onChange={(e) => setTeam(e.target.value)}
-              >
-                <option value="HQ">HQ</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="UNASSIGNED">UNASSIGNED</option>
-              </select>
-            </div>
-            {/* <button type="submit">Submit</button> */}
-          </form>
-        </div>
+          <div className="edit-form-input-container">
+            <label for="team">Team:</label>
+            <select
+              name="team"
+              id="team"
+              value={team}
+              onChange={(e) => setTeam(e.target.value)}
+            >
+              <option value="HQ">HQ</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="UNASSIGNED">UNASSIGNED</option>
+            </select>
+          </div>
+        </form>
       )}
     </div>
   );
