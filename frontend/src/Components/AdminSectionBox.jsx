@@ -18,7 +18,12 @@ const AdminSectionBox = ({
           return soldier.section === section;
         })
       : null;
-    setFilteredSoldiers(filteredBySection);
+    if (filteredBySection) {
+      const sorted = filteredBySection.sort((a, b) =>
+        a.unit_position > b.unit_position ? 1 : -1
+      );
+      setFilteredSoldiers(sorted);
+    }
   }, [allSoldiers]);
 
   return (
