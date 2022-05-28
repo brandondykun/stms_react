@@ -30,11 +30,13 @@ const SoldierInfoPage = ({ loggedInSoldier }) => {
         </h1>
       )}
       {currentSoldier && loggedInSoldierCanViewComments && (
-        <Link className="text-link" to={`/soldier-info/${id}/comments`}>
-          {loggedInSoldier.id === parseInt(id)
-            ? "View My Performance Comments >>"
-            : "View Performance Comments >>"}
-        </Link>
+        <div className="text-link-container">
+          <Link className="text-link" to={`/soldier-info/${id}/comments`}>
+            {loggedInSoldier.id === parseInt(id)
+              ? "View My Performance Comments >>"
+              : "View Performance Comments >>"}
+          </Link>
+        </div>
       )}
       {currentSoldier && (
         <SoldierDetails
