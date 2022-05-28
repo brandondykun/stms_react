@@ -7,12 +7,14 @@ const MyInfoPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
   return (
     <div className="primary-content">
       <h1 className="page-title">My Info</h1>
-      <Link
-        className="text-link"
-        to={`/soldier-info/${loggedInSoldier.id}/comments`}
-      >
-        {linkText}
-      </Link>
+      <div className="text-link-container">
+        <Link
+          className="text-link"
+          to={`/soldier-info/${loggedInSoldier.id}/comments`}
+        >
+          {linkText}
+        </Link>
+      </div>
       <SoldierDetails
         currentSoldier={loggedInSoldier}
         setCurrentSoldier={setLoggedInSoldier}
