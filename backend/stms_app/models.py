@@ -96,6 +96,8 @@ class Soldier(models.Model):
     def save(self, *args, **kwargs):
         if self.role == "BN FSO" or self.role == "BN FSNCO" or self.role == "CO FSO" or self.role == "CO FSNCO":
             self.is_leader = True
+        else:
+            self.is_leader = False
         self.unit_position = assign_unit_position(self.section, self.team, self.role)
         super(Soldier, self).save(*args, **kwargs)
 
