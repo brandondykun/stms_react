@@ -22,11 +22,13 @@ const RegisterPage = () => {
     const data = {
       username: username,
       password: password,
+      soldier: null,
     };
 
     apiCalls
       .registerUser(data)
       .then((res) => {
+        console.log("RESPONSE: ", res);
         if (res.status === 201) {
           console.log("Register RESPONSE: ", res);
           const id = res.data.id;
@@ -44,6 +46,7 @@ const RegisterPage = () => {
         }
       })
       .catch((err) => {
+        console.log("ERROR: ", err);
         if (err.response.data.username[0]) {
           setErrors(err.response.data.username[0]);
         }
