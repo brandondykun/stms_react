@@ -22,7 +22,6 @@ const RegisterPage = () => {
     const data = {
       username: username,
       password: password,
-      soldier: null,
     };
 
     apiCalls
@@ -35,6 +34,7 @@ const RegisterPage = () => {
           apiCalls
             .login(data)
             .then((res) => {
+              console.log("LOGIN RESPONSE: ", res);
               if (res.status === 200) {
                 localStorage.setItem("tokens", JSON.stringify(res.data));
                 navigate(`/create-account/${id}`);
