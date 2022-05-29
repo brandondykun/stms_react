@@ -2,7 +2,7 @@ import apiCalls from "../apiCalls/apiCalls";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const RegisterPage = () => {
+const RegisterPage = ({ setUserId, setIsLoading }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -36,6 +36,8 @@ const RegisterPage = () => {
             .then((res) => {
               console.log("LOGIN RESPONSE: ", res);
               if (res.status === 200) {
+                setUserId(id);
+                setIsLoading(false);
                 localStorage.setItem("tokens", JSON.stringify(res.data));
                 navigate(`/create-account/${id}`);
               }
