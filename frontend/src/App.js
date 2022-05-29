@@ -53,7 +53,12 @@ function App() {
           loggedInSoldier={loggedInSoldier}
         />
         <Routes>
-          <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/register"
+            element={
+              <RegisterPage setUserId={setUserId} setIsLoading={setIsLoading} />
+            }
+          />
           <Route
             path="/login"
             element={
