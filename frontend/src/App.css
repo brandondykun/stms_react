@@ -1,3 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  --gold: rgb(251, 158, 6);
+  --black: black;
+  --light: rgb(218, 214, 214);
+}
+
+
+
 .App {
   text-align: center;
   display: flex;
@@ -6,40 +21,45 @@
 }
 
 .primary-nav {
-  background-color: grey;
+  background-color: var(--black);
   padding: 0 1rem;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid var(--light); */
+  display: flex;
+  justify-content: space-around;
 }
 
 .navbar-link {
   margin: 0 .5rem;
   text-decoration: none;
-  background-color: grey;
+  background-color: var(--black);
   border: none;
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  color: var(--light);
   display: inline-block;
   padding: 1rem;
 }
 
 .navbar-link:hover {
   cursor: pointer;
-  color: grey;
+  color: var(--gold);
   background-color: black;
 }
 
 .primary-content {
   flex: 1;
   padding: 1rem;
-  background-color: black;
+  /* background-color: black; */
   color: white;
+  background-image: linear-gradient(black, rgb(85, 85, 85));
+  background-attachment: fixed;
 }
 
 .primary-footer {
-  background-color: grey;
+  background-color: var(--black);
   padding: .5rem;
-  border-top: 1px solid black;
+  /* border-top: 1px solid var(--light); */
+  color: var(--light);
 }
 
 .flex-column-form {
@@ -67,6 +87,10 @@
   font-size: 1.2rem;
 }
 
+.page-title {
+  margin: 1rem 0 2rem 0;
+}
+
 .name-link {
   text-decoration: none;
   color: white;
@@ -75,6 +99,7 @@
 
 .name-link:hover {
   font-style: italic;
+  color: var(--gold);
 }
 
 .soldier-role-name-container {
@@ -90,15 +115,16 @@
   font-size: 1.1rem;
 }
 
-
 .soldier-role-name-container:last-child {
   border-bottom: none;
 }
 
 .admin-info-indented {
-  padding-left: 2rem;
+  /* padding: .2rem .2rem .2rem 2rem; */
+  font-size: 1.1rem;
+  text-align: left;
+  flex: 1;
 }
-
 
 .info-box-container {
   border: 1px solid white;
@@ -106,14 +132,14 @@
   margin-bottom: 2rem;
 }
 
-
-
 .info-box-title {
   border-bottom: 1px solid white;
   font-size: 1.3rem;
   font-weight: bold;
-  background-color: grey;
+  background-color: var(--gold);
   border-radius: 15px 15px 0 0;
+  color: var(--black);
+  padding: .5rem;
 }
 
 .info-box-title-text {
@@ -124,11 +150,14 @@
   padding: 1rem;
   font-size: 1.1rem;
   text-align: left;
+  background-color: var(--black);
+  border-radius: 0 0 15px 15px;
 }
 
-/* .info-box-content-container > div {
-  padding: .2rem;
-} */
+.info-box-content, #reassign-form {
+  /* display: flex; */
+  margin-left: 5rem;
+}
 
 .edit-form-input-container {
   padding: .2rem;
@@ -150,50 +179,170 @@
 }
 
 .comments-container {
-  margin: 2rem 1rem;
+  margin: 2rem 0;
   border: 1px solid white;
   border-radius: 15px;
 }
 
 .comments-container-title {
   border-bottom: 1px solid white;
-  padding: .8rem 0;
+  padding: .5rem 0;
   font-size: 1.3rem;
   font-weight: bold;
-  background-color: grey;
+  background-color: var(--gold);
   border-radius: 15px 15px 0 0;
+  color: var(--black);
 }
 
 .comments-content-container {
   padding: 1rem;
   text-align: left;
+  background-color: var(--black);
+  border-radius: 0 0 15px 15px;
 }
 
 .info-box-title.with-edit-button {
   display: flex;
   justify-content: space-between;
   padding: none;
-  min-height: 40px;
+  min-height: 50px;
 }
 
 .title-box-button {
-  height: 2.5rem;
+  height: 2rem;
   border-radius: 0 13px 0 0;
-  border: none;
+  border: 1px solid var(--black);
   width: 4rem;
+  background-color: var(--black);
+  color: var(--gold);
+  font-weight: bold;
 }
 
 .title-box-button:hover {
   cursor: pointer;
+  background-color: var(--light);
+  color: var(--gold);
+}
+
+.login-register-form-container {
+  border: 1px solid var(--light);
+  padding: 2rem 1rem;
+  border-radius: 15px;
+  background-color: var(--black);
+  margin-top: 3rem;
+}
+
+.login-register-button {
+  background-color: var(--gold);
+  border: none;
+}
+
+.login-register-button:hover {
+  cursor: pointer;
+}
+
+.text-link {
+  color: var(--gold);
+  font-style: italic;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.text-link-container {
+  margin-bottom: 2rem;
+}
+
+.soldier-name-button-container {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.reassign-button {
+  background-color: var(--gold);
+  border: 1px solid var(--light);
+  border-radius: 5px;
+  padding: 0 .2rem;
+}
+
+.reassign-button:hover {
+  cursor: pointer;
+}
+
+.login-register-title {
+  margin-top: 0;
+}
+
+.homepage-info-box {
+  width: 90vw;
+  /* max-width: 300px; */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* .responsive-flex-row {
+  width: fit-content;
+} */
+
+
+@media only screen and (min-width: 400px) {
+  .homepage-info-box {
+    width: 350px;
+    margin: 0 auto 2rem auto;
+  }
 }
 
 
 @media only screen and (min-width: 600px) {
   .nav-link-text {
     display: block;
+    font-weight: bold;
   }
 
   .fa-solid {
     display: none;
+  }
+
+  .login-register-form-container {
+    max-width: 500px;
+    margin: 3rem auto;
+  }
+}
+
+
+@media only screen and (min-width: 800px) {
+  .info-box-content, #reassign-form  {
+    display: flex;
+    margin-left: 10rem;
+  }
+
+  .edit-form-input-container {
+    flex: 1;
+  }
+}
+
+
+
+@media only screen and (min-width: 1000px) {
+  .responsive-flex-row {
+    display: flex;
+    justify-content: center;
+  }
+  .homepage-info-box {
+    width: 300px;
+    margin: 0 auto 2rem auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .homepage-info-box {
+    width: 400px;
+    margin: 0 auto 2rem auto;
   }
 }
