@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
-const LoginPage = ({ setUserId, setLoggedInSoldier }) => {
+const LoginPage = ({ setUserId, setLoggedInSoldier, setIsLoading }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(null);
@@ -12,23 +12,29 @@ const LoginPage = ({ setUserId, setLoggedInSoldier }) => {
 
   const handleLoginFormSubmit = (e) => {
     e.preventDefault();
-
+    console.log("Trying to log in");
     const data = { username: username, password: password };
 
     const setLoginUserData = async () => {
       const loginRes = await apiCalls.login(data);
       if (loginRes.status === 200) {
+        console.log("LOGIN RES: ", loginRes);
         const decodedToken = jwt_decode(loginRes.data.access);
+        console.log("DECODED TOKEN: ", decodedToken.user_id);
         setUserId(decodedToken.user_id);
         localStorage.setItem("tokens", JSON.stringify(loginRes.data));
 
+        console.log("TRYING TO GET USER");
         const user = await apiCalls.getUserById(decodedToken.user_id);
+        console.log("LOGIN USER: ", user);
         if (user.status === 200) {
           const soldier_id = user.data.soldier;
 
           const soldier = await apiCalls.getSoldierById(soldier_id);
           if (soldier.status === 200) {
+            console.log("SOLDIER DATA: ", soldier.data);
             setLoggedInSoldier(soldier.data);
+            setIsLoading(false);
             navigate("/home");
           }
         }
