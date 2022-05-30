@@ -65,6 +65,7 @@ function App() {
               <LoginPage
                 setUserId={setUserId}
                 setLoggedInSoldier={setLoggedInSoldier}
+                setIsLoading={setIsLoading}
               />
             }
           />
