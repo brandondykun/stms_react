@@ -8,7 +8,7 @@ from stms_app.utils import assign_unit_position
 class Soldier(AbstractUser):
     """Detailed Information about each soldier."""
 
-    middle_name = models.CharField(max_length=30)
+    middle_name = models.CharField(max_length=30, null=True, blank=True)
     rank_choices = [
         ("PVT", "PVT"),
         ("PV2", "PV2"),
@@ -21,7 +21,7 @@ class Soldier(AbstractUser):
         ("1LT", "1LT"),
         ("CPT", "CPT"),
     ]
-    rank = models.CharField(max_length=5, choices=rank_choices)
+    rank = models.CharField(max_length=5, choices=rank_choices, null=True, blank=True)
     grade_choices = [
         ("E1", "E1"),
         ("E2", "E2"),
@@ -34,7 +34,7 @@ class Soldier(AbstractUser):
         ("O2", "O2"),
         ("O3", "O3"),
     ]
-    grade = models.CharField(max_length=3, choices=grade_choices)
+    grade = models.CharField(max_length=3, choices=grade_choices, null=True, blank=True)
     pebd = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     date_of_rank = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     expiration_term_of_service = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
