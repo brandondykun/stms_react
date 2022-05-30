@@ -65,7 +65,10 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <form onSubmit={handleCreateAccountFormSubmit}>
+    <form
+      className="flex-column-form create-account-form"
+      onSubmit={handleCreateAccountFormSubmit}
+    >
       <label htmlFor="first_name">First Name:</label>
       <input
         type="text"
@@ -158,36 +161,6 @@ const CreateAccountForm = () => {
         onChange={(e) => setEts(e.target.value)}
       />
 
-      {/* <label for="section">Section:</label>
-        <select name="section" id="section">
-          <option value="BN STAFF">BN STAFF</option>
-          <option value="ALPHA">ALPHA</option>
-          <option value="BRAVO">BRAVO</option>
-          <option value="CHARLIE">CHARLIE</option>
-          <option value="DELTA">DELTA</option>
-          <option value="UNASSIGNED">UNASSIGNED</option>
-        </select> */}
-      {/* <label for="team">Team:</label>
-        <select name="team" id="team">
-          <option value="HQ">HQ</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="UNASSIGNED">UNASSIGNED</option>
-        </select> */}
-      {/* <label for="role">Role:</label>
-        <select name="role" id="role">
-          <option value="BN FSO">BN FSO</option>
-          <option value="BN FSNCO">BN FSNCO</option>
-          <option value="AFATDS">AFATDS</option>
-          <option value="BN FO">BN FO</option>
-          <option value="BN RTO">BN RTO</option>
-          <option value="CO FSO">CO FSO</option>
-          <option value="CO FSNCO">CO FSNCO</option>
-          <option value="FO">FO</option>
-          <option value="RTO">RTO</option>
-          <option value="UNASSIGNED">UNASSIGNED</option>
-        </select> */}
       <label htmlFor="acft_score">ACFT:</label>
       <input
         type="number"
@@ -210,79 +183,97 @@ const CreateAccountForm = () => {
         onChange={(e) => setM4Qual(e.target.value)}
       />
 
-      <input
-        type="checkbox"
-        id="dlc_1_complete"
-        name="dlc_1_complete"
-        value={dlc1Complete}
-        onChange={(e) => setDlc1Complete(!dlc1Complete)}
-      />
-      <label htmlFor="dlc_1_complete">DLC 1 Complete</label>
+      <div className="create-account-form-input-container">
+        <input
+          type="checkbox"
+          id="dlc_1_complete"
+          name="dlc_1_complete"
+          value={dlc1Complete}
+          onChange={(e) => setDlc1Complete(!dlc1Complete)}
+        />
+        <label htmlFor="dlc_1_complete">DLC 1 Complete</label>
+      </div>
 
-      <input
-        type="checkbox"
-        id="blc_complete"
-        name="blc_complete"
-        value={blcComplete}
-        onChange={(e) => setBlcComplete(!blcComplete)}
-      />
-      <label htmlFor="blc_complete">BLC Complete</label>
+      <div className="create-account-form-input-container">
+        <input
+          type="checkbox"
+          id="blc_complete"
+          name="blc_complete"
+          value={blcComplete}
+          onChange={(e) => setBlcComplete(!blcComplete)}
+        />
+        <label htmlFor="blc_complete">BLC Complete</label>
+      </div>
 
-      <input
-        type="checkbox"
-        id="dlc_2_complete"
-        name="dlc_2_complete"
-        value={dlc2Complete}
-        onChange={(e) => setDlc2Complete(!dlc2Complete)}
-      />
-      <label htmlFor="dlc_2_complete">DLC 2 Complete</label>
+      <div className="create-account-form-input-container">
+        <input
+          type="checkbox"
+          id="dlc_2_complete"
+          name="dlc_2_complete"
+          value={dlc2Complete}
+          onChange={(e) => setDlc2Complete(!dlc2Complete)}
+        />
+        <label htmlFor="dlc_2_complete">DLC 2 Complete</label>
+      </div>
 
-      <input
-        type="checkbox"
-        id="alc_complete"
-        name="alc_complete"
-        value={alcComplete}
-        onChange={(e) => setAlcComplete(!alcComplete)}
-      />
-      <label htmlFor="alc_complete">ALC Complete</label>
+      <div className="create-account-form-input-container">
+        <input
+          type="checkbox"
+          id="alc_complete"
+          name="alc_complete"
+          value={alcComplete}
+          onChange={(e) => setAlcComplete(!alcComplete)}
+        />
+        <label htmlFor="alc_complete">ALC Complete</label>
+      </div>
 
-      <input
-        type="checkbox"
-        id="dlc_3_complete"
-        name="dlc_3_complete"
-        value={dlc3Complete}
-        onChange={(e) => setDlc3Complete(!dlc3Complete)}
-      />
-      <label htmlFor="dlc_3_complete">DLC 3 Complete</label>
+      <div className="create-account-form-input-container">
+        <input
+          type="checkbox"
+          id="dlc_3_complete"
+          name="dlc_3_complete"
+          value={dlc3Complete}
+          onChange={(e) => setDlc3Complete(!dlc3Complete)}
+        />
+        <label htmlFor="dlc_3_complete">DLC 3 Complete</label>
+      </div>
 
-      <input
-        type="checkbox"
-        id="slc_complete"
-        name="slc_complete"
-        value={slcComplete}
-        onChange={(e) => setSlcComplete(!slcComplete)}
-      />
-      <label htmlFor="slc_complete">SLC Complete</label>
+      <div className="create-account-form-input-container">
+        <input
+          type="checkbox"
+          id="slc_complete"
+          name="slc_complete"
+          value={slcComplete}
+          onChange={(e) => setSlcComplete(!slcComplete)}
+        />
+        <label htmlFor="slc_complete">SLC Complete</label>
+      </div>
 
-      <input
-        type="checkbox"
-        id="jfo_qualified"
-        name="jfo_qualified"
-        value={jfoQualified}
-        onChange={(e) => setJfoQualified(!jfoQualified)}
-      />
-      <label htmlFor="jfo_qualified">JFO Qualified</label>
+      <div className="create-account-form-input-container">
+        <input
+          type="checkbox"
+          id="jfo_qualified"
+          name="jfo_qualified"
+          value={jfoQualified}
+          onChange={(e) => setJfoQualified(!jfoQualified)}
+        />
+        <label htmlFor="jfo_qualified">JFO Qualified</label>
+      </div>
 
-      <input
-        type="checkbox"
-        id="drivers_license"
-        name="drivers_license"
-        value={driversLicense}
-        onChange={(e) => setDriversLicense(!driversLicense)}
-      />
-      <label htmlFor="drivers_license">Military Drivers Liscense</label>
+      <div className="create-account-form-input-container">
+        <input
+          type="checkbox"
+          id="drivers_license"
+          name="drivers_license"
+          value={driversLicense}
+          onChange={(e) => setDriversLicense(!driversLicense)}
+        />
+        <label htmlFor="drivers_license">Military Drivers Liscense</label>
+      </div>
 
-      <button type="submit">Submit</button>
+      <button className="create-account-button" type="submit">
+        Submit
+      </button>
     </form>
   );
 };
