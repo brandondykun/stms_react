@@ -22,6 +22,7 @@ const RegisterPage = ({ setUserId, setIsLoading }) => {
     const data = {
       username: username,
       password: password,
+      soldier: null,
     };
 
     apiCalls
