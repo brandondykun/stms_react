@@ -8,7 +8,6 @@ from rest_framework_simplejwt.views import (
 
 
 router = DefaultRouter()
-router.register("users", views.UserViewSet, basename='user')
 router.register("soldiers", views.SoldierViewSet, basename='soldier')
 router.register("comments", views.CommentViewSet, basename="comment")
 

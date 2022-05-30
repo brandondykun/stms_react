@@ -1,18 +1,14 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.contrib.auth.models import User
+from django.contrib.auth.models import (AbstractUser)
 from stms_app.utils import assign_unit_position
 
 
 # Create your models here.
-class Soldier(models.Model):
+class Soldier(AbstractUser):
     """Detailed Information about each soldier."""
 
-    # id = models.BigIntegerField(primary_key = True, default=1)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=30)
     middle_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
     rank_choices = [
         ("PVT", "PVT"),
         ("PV2", "PV2"),
@@ -88,7 +84,7 @@ class Soldier(models.Model):
     slc_complete = models.BooleanField(default=False, blank=True)
     jfo_qualified = models.BooleanField(default=False, blank=True)
     drivers_license = models.BooleanField(default=False, blank=True)
-    is_leader = models.BooleanField(default=False, blank=True)
+    is_staff = models.BooleanField(default=False, blank=True)
     unit_position = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
@@ -96,11 +92,12 @@ class Soldier(models.Model):
 
     def save(self, *args, **kwargs):
         if self.role == "BN FSO" or self.role == "BN FSNCO" or self.role == "CO FSO" or self.role == "CO FSNCO":
-            self.is_leader = True
+            self.is_staff = True
         else:
-            self.is_leader = False
+            self.is_staff = False
         self.unit_position = assign_unit_position(self.section, self.team, self.role)
         super(Soldier, self).save(*args, **kwargs)
+
 
 
 class Comment(models.Model):
