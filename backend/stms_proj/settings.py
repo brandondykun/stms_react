@@ -180,4 +180,4 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
-AUTH_USER_MODEL = 'css_app.AppUser'
+AUTH_USER_MODEL = 'stms_app.AppUser'
