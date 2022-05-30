@@ -8,10 +8,6 @@ apiCalls.login = (data) => {
   return axios.post(`${BASE_URL}api/token/`, data);
 };
 
-apiCalls.registerUser = (data) => {
-  return axios.post(`${BASE_URL}users/`, data);
-};
-
 apiCalls.createAccount = (data) => {
   return axios.post(`${BASE_URL}soldiers/`, data);
 };
@@ -30,10 +26,6 @@ apiCalls.getAllComments = () => {
 
 apiCalls.addComment = (data) => {
   return axios.post(`${BASE_URL}comments/`, data);
-};
-
-apiCalls.getUserById = (id) => {
-  return axios.get(`${BASE_URL}users/${id}`);
 };
 
 apiCalls.updateSoldierInfo = (id, data) => {
