@@ -87,6 +87,8 @@
   font-size: 1.2rem;
 }
 
+
+
 .page-title {
   margin: 1rem 0 2rem 0;
 }
@@ -159,13 +161,22 @@
   margin-left: 5rem;
 }
 
-.edit-form-input-container {
+.edit-form-input-container, .create-account-form-input-container {
   padding: .2rem;
   text-align: left;
 }
 
-.edit-form-input-container > label {
+.edit-form-input-container > label, .create-account-form-input-container > input {
   margin-right: .5rem;
+}
+
+.create-account-form {
+  max-width: 500px;
+  margin: auto;
+  background-color: var(--black);
+  padding: 2rem 1rem;
+  border: 1px solid var(--light);
+  border-radius: 15px;
 }
 
 .error-text-container {
@@ -232,13 +243,17 @@
   margin-top: 3rem;
 }
 
-.login-register-button {
+.login-register-button, .create-account-button {
   background-color: var(--gold);
   border: none;
 }
 
-.login-register-button:hover {
+.login-register-button:hover, .create-account-button:hover {
   cursor: pointer;
+}
+
+.create-account-button {
+  margin-top: 2rem;
 }
 
 .text-link {
