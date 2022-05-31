@@ -1,10 +1,10 @@
 import CreateAccountForm from "../Components/CreateAccountForm";
 
-const CreateAccountPage = () => {
+const CreateAccountPage = ({ setLoggedInSoldier }) => {
   return (
     <div className="primary-content">
       <h1 className="page-title">Create Account</h1>
-      <CreateAccountForm />
+      <CreateAccountForm setLoggedInSoldier={setLoggedInSoldier} />
     </div>
   );
 };
