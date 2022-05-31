@@ -83,7 +83,7 @@ const AdminBoxSoldierContainer = ({
       ) : (
         <form id="reassign-form" onSubmit={handleFormSubmit}>
           <div className="edit-form-input-container">
-            <label for="role">Role:</label>
+            <label htmlFor="role">Role:</label>
             <select
               name="role"
               id="role"
@@ -104,7 +104,7 @@ const AdminBoxSoldierContainer = ({
           </div>
 
           <div className="edit-form-input-container">
-            <label for="section">Section:</label>
+            <label htmlFor="section">Section:</label>
             <select
               name="section"
               id="section"
@@ -121,7 +121,7 @@ const AdminBoxSoldierContainer = ({
           </div>
 
           <div className="edit-form-input-container">
-            <label for="team">Team:</label>
+            <label htmlFor="team">Team:</label>
             <select
               name="team"
               id="team"
