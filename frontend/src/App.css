@@ -4,14 +4,15 @@
   padding: 0;
 }
 
+html {
+  background-color: var(--black);
+}
 
 :root {
   --gold: rgb(251, 158, 6);
   --black: black;
   --light: rgb(218, 214, 214);
 }
-
-
 
 .App {
   text-align: center;
