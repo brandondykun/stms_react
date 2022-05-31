@@ -34,7 +34,7 @@ const Navbar = ({ setUserId, setLoggedInSoldier, userId, loggedInSoldier }) => {
         </Link>
       )}
 
-      {userId && loggedInSoldier && loggedInSoldier.is_leader && (
+      {userId && loggedInSoldier && loggedInSoldier.is_staff && (
         <Link className="navbar-link" to="/admin">
           <span className="nav-link-text">Admin</span>{" "}
           <i class="fa-solid fa-list-check"></i>
