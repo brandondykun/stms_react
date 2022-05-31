@@ -14,7 +14,7 @@ const SoldierInfoPage = ({ loggedInSoldier }) => {
     apiCalls.getSoldierById(id).then((res) => {
       if (res.status === 200) {
         setCurrentSoldier(res.data);
-        if (loggedInSoldier.is_leader || res.data.id === loggedInSoldier.id) {
+        if (loggedInSoldier.is_staff || res.data.id === loggedInSoldier.id) {
           setLoggedInSoldierCanViewComments(true);
         }
       }
@@ -45,9 +45,6 @@ const SoldierInfoPage = ({ loggedInSoldier }) => {
           loggedInSoldier={loggedInSoldier}
         />
       )}
-      {/* {currentSoldier && loggedInSoldierCanViewComments && (
-        <Link to={`/soldier-info/${id}/comments`}>View Comments</Link>
-      )} */}
     </div>
   );
 };
