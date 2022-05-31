@@ -35,7 +35,7 @@ const ScoresInfoBox = ({
   };
 
   useEffect(() => {
-    if (loggedInSoldier.id === currentSoldier.id || loggedInSoldier.is_leader) {
+    if (loggedInSoldier.id === currentSoldier.id || loggedInSoldier.is_staff) {
       setLoggedInSoldierCanEdit(true);
     }
   }, [currentSoldier]);
