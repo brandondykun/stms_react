@@ -2,7 +2,7 @@ import apiCalls from "../apiCalls/apiCalls";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const RegisterPage = ({ setUserId, setIsLoading }) => {
+const RegisterPage = ({ setUserId, setIsLoading, setLoggedInSoldier }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -22,23 +22,23 @@ const RegisterPage = ({ setUserId, setIsLoading }) => {
     const data = {
       username: username,
       password: password,
-      soldier: null,
     };
 
     apiCalls
-      .registerUser(data)
+      .createAccount(data)
       .then((res) => {
         console.log("RESPONSE: ", res);
         if (res.status === 201) {
           console.log("Register RESPONSE: ", res);
           const id = res.data.id;
+          const user_data = res.data;
           apiCalls
             .login(data)
             .then((res) => {
-              console.log("LOGIN RESPONSE: ", res);
               if (res.status === 200) {
                 setUserId(id);
                 setIsLoading(false);
+                setLoggedInSoldier(user_data);
                 localStorage.setItem("tokens", JSON.stringify(res.data));
                 navigate(`/create-account/${id}`);
               }
@@ -49,8 +49,7 @@ const RegisterPage = ({ setUserId, setIsLoading }) => {
         }
       })
       .catch((err) => {
-        console.log("ERROR: ", err);
-        if (err.response.data.username[0]) {
+        if (err.response.data.username) {
           setErrors(err.response.data.username[0]);
         }
         console.log(err);
