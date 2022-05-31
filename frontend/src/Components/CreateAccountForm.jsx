@@ -2,7 +2,7 @@ import apiCalls from "../apiCalls/apiCalls";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const CreateAccountForm = () => {
+const CreateAccountForm = ({ setLoggedInSoldier }) => {
   //   const [user, setUser] = useState("");
   const [firstName, setFirstName] = useState("");
   const [middleName, setMiddleName] = useState("");
@@ -53,9 +53,10 @@ const CreateAccountForm = () => {
     };
 
     apiCalls
-      .createAccount(data)
+      .updateSoldierInfo(id, data)
       .then((res) => {
-        if (res.status === 201) {
+        if (res.status === 200) {
+          setLoggedInSoldier(res.data);
           navigate("/home");
         }
       })
@@ -76,6 +77,7 @@ const CreateAccountForm = () => {
         name="first_name"
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
+        required
       />
 
       <label htmlFor="middle_name">Middle Name:</label>
@@ -85,6 +87,7 @@ const CreateAccountForm = () => {
         name="middle_name"
         value={middleName}
         onChange={(e) => setMiddleName(e.target.value)}
+        required
       />
 
       <label htmlFor="last_name">Last Name:</label>
@@ -94,6 +97,7 @@ const CreateAccountForm = () => {
         name="last_name"
         value={lastName}
         onChange={(e) => setLastName(e.target.value)}
+        required
       />
 
       <label htmlFor="rank">Rank:</label>
@@ -102,6 +106,7 @@ const CreateAccountForm = () => {
         id="rank"
         value={rank}
         onChange={(e) => setRank(e.target.value)}
+        required
       >
         <option value="PVT">PVT</option>
         <option value="PV2">PV2</option>
@@ -121,6 +126,7 @@ const CreateAccountForm = () => {
         id="grade"
         value={grade}
         onChange={(e) => setGrade(e.target.value)}
+        required
       >
         <option value="E1">E1</option>
         <option value="E2">E2</option>
