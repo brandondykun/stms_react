@@ -37,6 +37,7 @@ const AddCommentForm = ({ allComments, setAllComments, loggedInSoldier }) => {
       className="flex-column-form add-comment-form"
       onSubmit={handleAddCommentFormSubmit}
     >
+      <h3>Add Comment</h3>
       <label htmlFor="category">Category</label>
       <select
         name="category"
@@ -62,7 +63,9 @@ const AddCommentForm = ({ allComments, setAllComments, loggedInSoldier }) => {
         maxLength={250}
       />
 
-      <button type="submit">Add Comment</button>
+      <button className="login-register-button" type="submit">
+        Add Comment
+      </button>
     </form>
   );
 };
