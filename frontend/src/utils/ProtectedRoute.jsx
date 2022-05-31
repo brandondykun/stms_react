@@ -1,10 +1,10 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = ({
-  userId,
   redirectPath = "/login",
   children,
   isLoading,
+  loggedInSoldier,
 }) => {
   if (isLoading) {
     return (
@@ -13,7 +13,7 @@ const ProtectedRoute = ({
       </div>
     );
   }
-  if (!userId) {
+  if (!loggedInSoldier) {
     return <Navigate to={redirectPath} replace />;
   }
 

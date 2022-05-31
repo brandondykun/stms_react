@@ -17,7 +17,6 @@ import jwt_decode from "jwt-decode";
 import apiCalls from "./apiCalls/apiCalls";
 
 function App() {
-  const [userId, setUserId] = useState();
   const [loggedInSoldier, setLoggedInSoldier] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -27,7 +26,6 @@ function App() {
       if (tokens) {
         const accessToken = tokens.access;
         const decodedToken = jwt_decode(accessToken);
-        setUserId(decodedToken.user_id);
         const user = await apiCalls.getSoldierById(decodedToken.user_id);
         if (user.status === 200) {
           setLoggedInSoldier(user.data);
@@ -43,8 +41,6 @@ function App() {
       <BrowserRouter>
         <Navbar
           setLoggedInSoldier={setLoggedInSoldier}
-          setUserId={setUserId}
-          userId={userId}
           loggedInSoldier={loggedInSoldier}
         />
         <Routes>
@@ -52,7 +48,6 @@ function App() {
             path="/register"
             element={
               <RegisterPage
-                setUserId={setUserId}
                 setIsLoading={setIsLoading}
                 setLoggedInSoldier={setLoggedInSoldier}
               />
@@ -62,14 +57,18 @@ function App() {
             path="/login"
             element={
               <LoginPage
-                setUserId={setUserId}
                 setLoggedInSoldier={setLoggedInSoldier}
                 setIsLoading={setIsLoading}
               />
             }
           />
           <Route
-            element={<ProtectedRoute userId={userId} isLoading={isLoading} />}
+            element={
+              <ProtectedRoute
+                isLoading={isLoading}
+                loggedInSoldier={loggedInSoldier}
+              />
+            }
           >
             <Route path="/home" element={<HomePage />} />
             <Route

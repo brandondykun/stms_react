@@ -2,7 +2,7 @@ import apiCalls from "../apiCalls/apiCalls";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const RegisterPage = ({ setUserId, setIsLoading, setLoggedInSoldier }) => {
+const RegisterPage = ({ setIsLoading, setLoggedInSoldier }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -36,7 +36,6 @@ const RegisterPage = ({ setUserId, setIsLoading, setLoggedInSoldier }) => {
             .login(data)
             .then((res) => {
               if (res.status === 200) {
-                setUserId(id);
                 setIsLoading(false);
                 setLoggedInSoldier(user_data);
                 localStorage.setItem("tokens", JSON.stringify(res.data));

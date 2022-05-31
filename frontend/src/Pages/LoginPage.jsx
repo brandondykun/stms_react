@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
-const LoginPage = ({ setUserId, setLoggedInSoldier, setIsLoading }) => {
+const LoginPage = ({ setLoggedInSoldier, setIsLoading }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(null);
@@ -18,7 +18,6 @@ const LoginPage = ({ setUserId, setLoggedInSoldier, setIsLoading }) => {
       const loginRes = await apiCalls.login(data);
       if (loginRes.status === 200) {
         const decodedToken = jwt_decode(loginRes.data.access);
-        setUserId(decodedToken.user_id);
         localStorage.setItem("tokens", JSON.stringify(loginRes.data));
 
         const user = await apiCalls.getSoldierById(decodedToken.user_id);
