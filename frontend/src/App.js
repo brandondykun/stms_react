@@ -2,7 +2,7 @@ import "./App.css";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import CreateAccountPage from "./Pages/CreateAccountPage";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar";
 import MyInfoPage from "./Pages/MyInfoPage";
@@ -15,6 +15,8 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import AdminRoute from "./utils/AdminRoute";
 import jwt_decode from "jwt-decode";
 import apiCalls from "./apiCalls/apiCalls";
+import StaffOrSelfRoute from "./utils/StaffOrSelfRoute";
+import NoAccountRoute from "./utils/NoAccountRoute";
 
 function App() {
   const [loggedInSoldier, setLoggedInSoldier] = useState(null);
@@ -85,34 +87,54 @@ function App() {
               path="/soldier-info/:id"
               element={<SoldierInfoPage loggedInSoldier={loggedInSoldier} />}
             />
+
             <Route
-              path="/soldier-info/:id/comments"
-              element={<CommentsPage loggedInSoldier={loggedInSoldier} />}
-            />
-            <Route
-              path="/create-account/:id"
               element={
-                <CreateAccountPage setLoggedInSoldier={setLoggedInSoldier} />
-              }
-            />
-          </Route>
-          <Route
-            element={
-              <AdminRoute
-                loggedInSoldier={loggedInSoldier}
-                isLoading={isLoading}
-              />
-            }
-          >
-            <Route
-              path="/admin"
-              element={
-                <AdminPage
+                <StaffOrSelfRoute
                   loggedInSoldier={loggedInSoldier}
-                  setLoggedInSoldier={setLoggedInSoldier}
+                  isLoading={isLoading}
                 />
               }
-            />
+            >
+              <Route
+                path="/soldier-info/:id/comments"
+                element={<CommentsPage loggedInSoldier={loggedInSoldier} />}
+              />
+            </Route>
+            <Route
+              element={
+                <AdminRoute
+                  loggedInSoldier={loggedInSoldier}
+                  isLoading={isLoading}
+                />
+              }
+            >
+              <Route
+                path="/admin"
+                element={
+                  <AdminPage
+                    loggedInSoldier={loggedInSoldier}
+                    setLoggedInSoldier={setLoggedInSoldier}
+                  />
+                }
+              />
+            </Route>
+
+            <Route
+              element={
+                <NoAccountRoute
+                  loggedInSoldier={loggedInSoldier}
+                  isLoading={isLoading}
+                />
+              }
+            >
+              <Route
+                path="/create-account/:id"
+                element={
+                  <CreateAccountPage setLoggedInSoldier={setLoggedInSoldier} />
+                }
+              />
+            </Route>
           </Route>
         </Routes>
         <Footer />
