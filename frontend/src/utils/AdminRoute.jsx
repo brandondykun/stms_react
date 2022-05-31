@@ -13,7 +13,7 @@ const AdminRoute = ({
       </div>
     );
   }
-  if (!loggedInSoldier.is_leader) {
+  if (!loggedInSoldier.is_staff) {
     return <Navigate to={redirectPath} replace />;
   }
 
