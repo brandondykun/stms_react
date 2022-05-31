@@ -28,14 +28,9 @@ function App() {
         const accessToken = tokens.access;
         const decodedToken = jwt_decode(accessToken);
         setUserId(decodedToken.user_id);
-        const user = await apiCalls.getUserById(decodedToken.user_id);
+        const user = await apiCalls.getSoldierById(decodedToken.user_id);
         if (user.status === 200) {
-          const soldier_id = user.data.soldier;
-
-          const soldier = await apiCalls.getSoldierById(soldier_id);
-          if (soldier.status === 200) {
-            setLoggedInSoldier(soldier.data);
-          }
+          setLoggedInSoldier(user.data);
         }
       }
       setIsLoading(false);
@@ -56,7 +51,11 @@ function App() {
           <Route
             path="/register"
             element={
-              <RegisterPage setUserId={setUserId} setIsLoading={setIsLoading} />
+              <RegisterPage
+                setUserId={setUserId}
+                setIsLoading={setIsLoading}
+                setLoggedInSoldier={setLoggedInSoldier}
+              />
             }
           />
           <Route
@@ -91,7 +90,12 @@ function App() {
               path="/soldier-info/:id/comments"
               element={<CommentsPage loggedInSoldier={loggedInSoldier} />}
             />
-            <Route path="/create-account/:id" element={<CreateAccountPage />} />
+            <Route
+              path="/create-account/:id"
+              element={
+                <CreateAccountPage setLoggedInSoldier={setLoggedInSoldier} />
+              }
+            />
           </Route>
           <Route
             element={
