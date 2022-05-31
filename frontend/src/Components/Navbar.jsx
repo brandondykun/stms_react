@@ -26,7 +26,7 @@ const Navbar = ({ setLoggedInSoldier, loggedInSoldier }) => {
         </Link>
       )}
 
-      {loggedInSoldier && (
+      {loggedInSoldier && loggedInSoldier.first_name && (
         <Link className="navbar-link" to="/my-info">
           <span className="nav-link-text">My Info</span>{" "}
           <i class="fa-solid fa-user"></i>
@@ -40,14 +40,14 @@ const Navbar = ({ setLoggedInSoldier, loggedInSoldier }) => {
         </Link>
       )}
 
-      {loggedInSoldier && (
+      {loggedInSoldier && loggedInSoldier.first_name && (
         <Link className="navbar-link" to="/home">
           <span className="nav-link-text">Home</span>{" "}
           <i class="fa-solid fa-house"></i>
         </Link>
       )}
 
-      {loggedInSoldier && (
+      {loggedInSoldier && loggedInSoldier.first_name && (
         <button className="navbar-link" onClick={handleLogout}>
           <span className="nav-link-text">Log Out</span>{" "}
           <i class="fa-solid fa-right-from-bracket"></i>
