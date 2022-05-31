@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 class SoldierSerializer(serializers.ModelSerializer):
     class Meta:
         model = Soldier
-        fields = ["id", "username", "password", "first_name", "middle_name", "last_name", "rank", "grade", "pebd", "date_of_rank", "expiration_term_of_service", "section", "team", "role", "acft_score", "m4_qual", "dlc_1_complete", "blc_complete", "dlc_2_complete", "alc_complete", "dlc_3_complete", "slc_complete", "jfo_qualified", "drivers_license", "unit_position"]
+        fields = ["id", "username", "password", "first_name", "middle_name", "last_name", "rank", "grade", "pebd", "date_of_rank", "expiration_term_of_service", "section", "team", "role", "acft_score", "m4_qual", "dlc_1_complete", "blc_complete", "dlc_2_complete", "alc_complete", "dlc_3_complete", "slc_complete", "jfo_qualified", "drivers_license", "unit_position", "is_staff"]
 
     password = serializers.CharField(write_only=True)
 
