@@ -91,7 +91,7 @@ html {
 
 
 .page-title {
-  margin: 1rem 0 2rem 0;
+  margin: 2rem 0 4rem 0;
 }
 
 .name-link {
@@ -314,6 +314,29 @@ html {
   margin-top: 5rem;
 }
 
+.separate-soon-container {
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.separate-soon-box-container {
+  /* padding: 1rem; */
+  border-radius: 15px;
+  margin: 2rem 1rem;
+  border: 1px solid var(--light);
+}
+
+.separate-soon-title {
+  padding: 1rem;
+  border-bottom: 1px solid var(--light);
+  color: var(--gold);
+}
+
+.separate-soon-list-container {
+  padding: 1rem;
+}
+
 
 @media only screen and (min-width: 400px) {
   .homepage-info-box {
@@ -336,6 +359,7 @@ html {
   .login-register-form-container {
     max-width: 500px;
     margin: 3rem auto;
+    padding: 2rem;
   }
 
   .add-comment-form {
@@ -343,6 +367,11 @@ html {
     margin: auto;
     padding: 2rem;
     margin-top: 5rem;
+  }
+
+  .separate-soon-container {
+    max-width: 600px;
+    margin: auto;
   }
 }
 
@@ -375,5 +404,20 @@ html {
   .homepage-info-box {
     width: 400px;
     margin: 0 auto 2rem auto;
+  }
+
+  .admin-page-container {
+    display: flex;
+  }
+
+  .admin-section-boxes-container {
+    padding-right: 1rem;
+    flex: 1;
+    padding-left: 2rem;
+  }
+
+  .separate-soon-container {
+    margin-left: 1rem;
+    margin-right: 2rem;
   }
 }
