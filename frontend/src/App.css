@@ -49,7 +49,7 @@ html {
 
 .primary-content {
   flex: 1;
-  padding: 1rem;
+  padding: 1rem 1rem 3rem 1rem;
   /* background-color: black; */
   color: white;
   background-image: linear-gradient(black, rgb(85, 85, 85));
@@ -140,7 +140,7 @@ html {
   font-size: 1.3rem;
   font-weight: bold;
   background-color: var(--gold);
-  border-radius: 15px 15px 0 0;
+  border-radius: 14px 14px 0 0;
   color: var(--black);
   padding: .5rem;
 }
@@ -191,7 +191,7 @@ html {
 }
 
 .comments-container {
-  margin: 2rem 0;
+  margin: 3rem 0;
   border: 1px solid white;
   border-radius: 15px;
 }
@@ -202,7 +202,7 @@ html {
   font-size: 1.3rem;
   font-weight: bold;
   background-color: var(--gold);
-  border-radius: 15px 15px 0 0;
+  border-radius: 14px 14px 0 0;
   color: var(--black);
 }
 
@@ -310,7 +310,8 @@ html {
   background-color: var(--black);
   padding: 1rem;
   border-radius: 15px;
-  border: 1px solid var(--light);
+  /* border: 1px solid var(--light); */
+  margin-top: 5rem;
 }
 
 
@@ -335,6 +336,13 @@ html {
   .login-register-form-container {
     max-width: 500px;
     margin: 3rem auto;
+  }
+
+  .add-comment-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    margin-top: 5rem;
   }
 }
 
