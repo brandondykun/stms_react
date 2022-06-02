@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import apiCalls from "../apiCalls/apiCalls";
 import AdminSectionBox from "../Components/AdminSectionBox";
 import SeparateSoon from "../Components/SeparateSoon";
+import QualFailures from "../Components/QualFailures";
 
 const AdminPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
   const [allSoldiers, setAllSoldiers] = useState();
@@ -69,30 +70,39 @@ const AdminPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
             setLoggedInSoldier={setLoggedInSoldier}
           />
         </div>
-
-        <div className="separate-soon-container">
-          <h2>Upcomming ETS</h2>
-          <SeparateSoon allSoldiers={allSoldiers} daysStart={0} daysStop={30} />
-          <SeparateSoon
-            allSoldiers={allSoldiers}
-            daysStart={30}
-            daysStop={60}
-          />
-          <SeparateSoon
-            allSoldiers={allSoldiers}
-            daysStart={60}
-            daysStop={90}
-          />
-          <SeparateSoon
-            allSoldiers={allSoldiers}
-            daysStart={90}
-            daysStop={180}
-          />
-          <SeparateSoon
-            allSoldiers={allSoldiers}
-            daysStart={180}
-            daysStop={365}
-          />
+        <div>
+          <div className="separate-soon-container">
+            <h2>Upcomming ETS</h2>
+            <SeparateSoon
+              allSoldiers={allSoldiers}
+              daysStart={0}
+              daysStop={30}
+            />
+            <SeparateSoon
+              allSoldiers={allSoldiers}
+              daysStart={30}
+              daysStop={60}
+            />
+            <SeparateSoon
+              allSoldiers={allSoldiers}
+              daysStart={60}
+              daysStop={90}
+            />
+            <SeparateSoon
+              allSoldiers={allSoldiers}
+              daysStart={90}
+              daysStop={180}
+            />
+            <SeparateSoon
+              allSoldiers={allSoldiers}
+              daysStart={180}
+              daysStop={365}
+            />
+          </div>
+          <div className="separate-soon-container">
+            <h2>Failures</h2>
+            <QualFailures allSoldiers={allSoldiers} />
+          </div>
         </div>
       </div>
     </div>
