@@ -52,7 +52,12 @@ html {
   padding: 1rem 1rem 3rem 1rem;
   /* background-color: black; */
   color: white;
-  background-image: linear-gradient(black, rgb(85, 85, 85));
+  background-image: linear-gradient(black 5%, rgb(85, 85, 85) 70%);
+  /* background-color: rgb(143, 143, 143); */
+  /* background-image: linear-gradient(rgb(53, 53, 53), rgb(161, 161, 161)); */
+
+
+
   background-attachment: fixed;
 }
 
@@ -281,7 +286,9 @@ html {
 }
 
 .reassign-button {
-  background-color: var(--gold);
+  /* background-color: var(--gold); */
+  background-color: var(--light);
+
   border: 1px solid var(--light);
   border-radius: 5px;
   padding: 0 .2rem;
@@ -289,6 +296,11 @@ html {
 
 .reassign-button:hover {
   cursor: pointer;
+  background-color: var(--gold);
+}
+
+.reassign-button:active {
+  transform: scale(.95);
 }
 
 .login-register-title {
@@ -318,6 +330,7 @@ html {
   background-color: var(--black);
   padding: 1rem;
   border-radius: 15px;
+  margin-bottom: 2rem;
 }
 
 .separate-soon-box-container {
@@ -371,7 +384,7 @@ html {
 
   .separate-soon-container {
     max-width: 600px;
-    margin: auto;
+    margin: auto auto 2rem auto;
   }
 }
 
@@ -419,5 +432,6 @@ html {
   .separate-soon-container {
     margin-left: 1rem;
     margin-right: 2rem;
+    margin-bottom: 2rem;
   }
 }
