@@ -75,12 +75,16 @@ const RankAndDatesInfoBox = ({
       </div>
       {editSection !== "Rank/Dates" ? (
         <div className="info-box-content-container">
-          <div>Grade: {currentSoldier.grade}</div>
-          <div>Rank: {currentSoldier.rank}</div>
-          <div>PEBD: {currentSoldier.pebd}</div>
-          <div>Date of Rank: {currentSoldier.date_of_rank}</div>
-          <div>ETS: {currentSoldier.expiration_term_of_service}</div>
-          <div>Days Until ETS: {daysUntilEts}</div>
+          <div className="info-box-detail">Grade: {currentSoldier.grade}</div>
+          <div className="info-box-detail">Rank: {currentSoldier.rank}</div>
+          <div className="info-box-detail">PEBD: {currentSoldier.pebd}</div>
+          <div className="info-box-detail">
+            Date of Rank: {currentSoldier.date_of_rank}
+          </div>
+          <div className="info-box-detail">
+            ETS: {currentSoldier.expiration_term_of_service}
+          </div>
+          <div className="info-box-detail">Days Until ETS: {daysUntilEts}</div>
         </div>
       ) : (
         <div className="info-box-content-container">
