@@ -6,9 +6,9 @@ const AssignmentInfoBox = ({ currentSoldier }) => {
       </div>
 
       <div className="info-box-content-container">
-        <div>Section: {currentSoldier.section}</div>
-        <div>Team: {currentSoldier.team}</div>
-        <div>Role: {currentSoldier.role}</div>
+        <div className="info-box-detail">Section: {currentSoldier.section}</div>
+        <div className="info-box-detail">Team: {currentSoldier.team}</div>
+        <div className="info-box-detail">Role: {currentSoldier.role}</div>
       </div>
     </div>
   );
