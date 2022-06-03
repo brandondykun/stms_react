@@ -22,7 +22,7 @@ const SectionBox = ({ section, soldiers }) => {
     <div className="info-box-container homepage-info-box">
       <div className="info-box-title">{section}</div>
       <div className="info-box-content-container">
-        {filteredSoldiers &&
+        {filteredSoldiers && filteredSoldiers.length > 0 ? (
           filteredSoldiers.map((soldier) => {
             return (
               <div
@@ -38,7 +38,10 @@ const SectionBox = ({ section, soldiers }) => {
                 </Link>
               </div>
             );
-          })}
+          })
+        ) : (
+          <div>None</div>
+        )}
       </div>
     </div>
   );
