@@ -86,28 +86,28 @@ const MilitaryEducationBox = ({
       </div>
       {editSection !== "Military Education" ? (
         <div className="info-box-content-container">
-          <div>
+          <div className="info-box-detail">
             DLC 1 Complete: {currentSoldier.dlc_1_complete ? "True" : "False"}
           </div>
-          <div>
+          <div className="info-box-detail">
             BLC Complete: {currentSoldier.blc_complete ? "True" : "False"}
           </div>
-          <div>
+          <div className="info-box-detail">
             DLC 2 Complete: {currentSoldier.dlc_2_complete ? "True" : "False"}
           </div>
-          <div>
+          <div className="info-box-detail">
             ALC Complete: {currentSoldier.alc_complete ? "True" : "False"}
           </div>
-          <div>
+          <div className="info-box-detail">
             DLC 3 Complete: {currentSoldier.dlc_3_complete ? "True" : "False"}
           </div>
-          <div>
+          <div className="info-box-detail">
             SLC Complete: {currentSoldier.slc_complete ? "True" : "False"}
           </div>
-          <div>
+          <div className="info-box-detail">
             JFO Qualified: {currentSoldier.jfo_qualified ? "True" : "False"}
           </div>
-          <div>
+          <div className="info-box-detail">
             Drivers License: {currentSoldier.drivers_license ? "True" : "False"}
           </div>
         </div>
