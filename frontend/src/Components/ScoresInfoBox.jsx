@@ -61,8 +61,12 @@ const ScoresInfoBox = ({
 
       {editSection !== "Scores" ? (
         <div className="info-box-content-container">
-          <div>ACFT: {currentSoldier.acft_score}</div>
-          <div>M4 Qual: {currentSoldier.m4_qual}</div>
+          <div className="info-box-detail">
+            ACFT: {currentSoldier.acft_score}
+          </div>
+          <div className="info-box-detail">
+            M4 Qual: {currentSoldier.m4_qual}
+          </div>
         </div>
       ) : (
         <div className="info-box-content-container">
