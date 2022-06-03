@@ -63,9 +63,15 @@ const NameInfoBox = ({
 
       {editSection !== "Name" ? (
         <div className="info-box-content-container">
-          <div>First Name: {currentSoldier.first_name}</div>
-          <div>Middle Name: {currentSoldier.middle_name}</div>
-          <div>Last Name: {currentSoldier.last_name}</div>
+          <div className="info-box-detail">
+            First Name: {currentSoldier.first_name}
+          </div>
+          <div className="info-box-detail">
+            Middle Name: {currentSoldier.middle_name}
+          </div>
+          <div className="info-box-detail">
+            Last Name: {currentSoldier.last_name}
+          </div>
         </div>
       ) : (
         <div className="info-box-content-container">
