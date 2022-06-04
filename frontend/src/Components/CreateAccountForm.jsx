@@ -274,7 +274,7 @@ const CreateAccountForm = ({ setLoggedInSoldier }) => {
           value={driversLicense}
           onChange={(e) => setDriversLicense(!driversLicense)}
         />
-        <label htmlFor="drivers_license">Military Drivers Liscense</label>
+        <label htmlFor="drivers_license">Military Drivers License</label>
       </div>
 
       <button className="create-account-button" type="submit">
