@@ -72,7 +72,10 @@ function App() {
               />
             }
           >
-            <Route path="/home" element={<HomePage />} />
+            <Route
+              path="/home"
+              element={<HomePage loggedInSoldier={loggedInSoldier} />}
+            />
             <Route
               path="/my-info"
               element={
