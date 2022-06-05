@@ -24,7 +24,11 @@ const LoginPage = ({ setLoggedInSoldier, setIsLoading }) => {
         if (user.status === 200) {
           setLoggedInSoldier(user.data);
           setIsLoading(false);
-          navigate("/home");
+          if (user.data.first_name) {
+            navigate("/home");
+          } else {
+            navigate(`/create-account/${user.data.id}`);
+          }
         }
       }
     };
