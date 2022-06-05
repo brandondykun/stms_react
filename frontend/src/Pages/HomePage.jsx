@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import SectionBox from "../Components/SectionBox";
 
-const HomePage = () => {
+const HomePage = ({ loggedInSoldier }) => {
   const [allSoldiers, setAllSoldiers] = useState();
 
   useEffect(() => {
@@ -20,6 +20,12 @@ const HomePage = () => {
   return (
     <div className="primary-content">
       <h1 className="page-title">Homepage</h1>
+      {loggedInSoldier.section === "UNASSIGNED" && (
+        <div className="under-title-messsage">
+          You have not been assgined to a section yet. Once you are assigned to
+          a section, you will show up in your section box.
+        </div>
+      )}
       <SectionBox soldiers={allSoldiers} section="BN STAFF" />
       <div className="responsive-flex-row">
         <SectionBox soldiers={allSoldiers} section="ALPHA" />
