@@ -3,6 +3,8 @@ import apiCalls from "../apiCalls/apiCalls";
 import AdminSectionBox from "../Components/AdminSectionBox";
 import SeparateSoon from "../Components/SeparateSoon";
 import QualFailures from "../Components/QualFailures";
+import JfoQualified from "../Components/JfoQualified";
+import Licensed from "../Components/Licensed";
 
 const AdminPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
   const [allSoldiers, setAllSoldiers] = useState();
@@ -102,6 +104,11 @@ const AdminPage = ({ loggedInSoldier, setLoggedInSoldier }) => {
           <div className="separate-soon-container">
             <h2>Failures</h2>
             <QualFailures allSoldiers={allSoldiers} />
+          </div>
+          <div className="separate-soon-container">
+            <h2>Qualifications</h2>
+            <JfoQualified allSoldiers={allSoldiers} />
+            <Licensed allSoldiers={allSoldiers} />
           </div>
         </div>
       </div>
