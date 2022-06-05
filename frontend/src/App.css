@@ -50,14 +50,8 @@ html {
 .primary-content {
   flex: 1;
   padding: 1rem 1rem 3rem 1rem;
-  /* background-color: black; */
   color: white;
   background-image: linear-gradient(black 5%, rgb(85, 85, 85) 70%);
-  /* background-color: rgb(143, 143, 143); */
-  /* background-image: linear-gradient(rgb(53, 53, 53), rgb(161, 161, 161)); */
-
-
-
   background-attachment: fixed;
 }
 
@@ -121,6 +115,7 @@ html {
 .soldier-role-name-container-homepage {
   display: flex;
   font-size: 1.1rem;
+  padding: .3rem 0;
 }
 
 .soldier-role-name-container:last-child {
@@ -128,7 +123,7 @@ html {
 }
 
 .admin-info-indented {
-  /* padding: .2rem .2rem .2rem 2rem; */
+  padding: .2rem .2rem .2rem 0;
   font-size: 1.1rem;
   text-align: left;
   flex: 1;
@@ -168,7 +163,7 @@ html {
 }
 
 .edit-form-input-container, .create-account-form-input-container {
-  padding: .2rem;
+  padding: .2rem .2rem .2rem 0;
   text-align: left;
 }
 
@@ -312,6 +307,7 @@ html {
   /* max-width: 300px; */
   margin-right: auto;
   margin-left: auto;
+  background-color: var(--black);
 }
 
 /* .responsive-flex-row {
@@ -350,6 +346,18 @@ html {
   padding: 1rem;
 }
 
+.info-box-detail {
+  padding: .25rem 0;
+}
+
+.under-title-messsage {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: red;
+  max-width: 600px;
+  margin: auto auto 4rem auto;
+}
+
 
 @media only screen and (min-width: 400px) {
   .homepage-info-box {
@@ -385,6 +393,15 @@ html {
   .separate-soon-container {
     max-width: 600px;
     margin: auto auto 2rem auto;
+  }
+
+  .primary-content {
+    padding: 1rem 3rem 3rem 3rem;
+  }
+
+  .soldier-details-container {
+    max-width: 600px;
+    margin: auto;
   }
 }
 
